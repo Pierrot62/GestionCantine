@@ -59,7 +59,7 @@ namespace GestionCantine {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestionCantine;V1.0.0.0;component/sql/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestionCantine;component/sql/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SQL\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

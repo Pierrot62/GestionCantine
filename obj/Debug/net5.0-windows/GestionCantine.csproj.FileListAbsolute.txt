@@ -46,3 +46,12 @@ C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCant
 C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\ref\GestionCantine.dll
 C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine.pdb
 C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine.genruntimeconfig.cache
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine.csproj.AssemblyReference.cache
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\SQL\App.g.cs
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine_MarkupCompile.cache
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine_MarkupCompile.lref
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine.dll
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\ref\GestionCantine.dll
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine.pdb

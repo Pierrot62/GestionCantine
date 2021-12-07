@@ -4,17 +4,23 @@
 winexe
 C#
 .cs
-C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\
+C:\Users\59011-07-07\Desktop\GestionCantine\obj\Debug\net5.0-windows\
 GestionCantine
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\59011-07-05\Desktop\GestionCantine\App.xaml
-11407045341
+C:\Users\59011-07-07\Desktop\GestionCantine\App.xaml
+2-1994355592
 
+<<<<<<< HEAD
 111921607845
 338-1469293728
 MainWindow.xaml;
+=======
+13613888920
+338591115715
+MainWindow.xaml;SQL\App.xaml;
+>>>>>>> 6bb0f68b2424317757c4d4052c174d0fd10bfb9e
 
-False
+True
 

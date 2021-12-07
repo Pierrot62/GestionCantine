@@ -14,6 +14,6 @@ namespace GestionCantine.Data.Models
         public string Mdpuser { get; set; }
         public int IdRole { get; set; }
 
-        public virtual Role IdRoleNavigation { get; set; }
+        public virtual Role Role { get; set; }
     }
 }
