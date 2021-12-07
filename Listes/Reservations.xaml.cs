@@ -19,9 +19,16 @@ namespace GestionCantine.Listes
     /// </summary>
     public partial class Reservations : Window
     {
-        public Reservations()
+        public MainWindow FenetreMere { get; set; }
+        public Reservations(MainWindow FenetreMere)
         {
             InitializeComponent();
+            this.FenetreMere = FenetreMere;
+        }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            this.FenetreMere.Close();
         }
     }
 }
