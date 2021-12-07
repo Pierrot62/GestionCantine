@@ -12,12 +12,14 @@ namespace GestionCantine.Data.Dtos
         public int? IdEleve { get; set; }
         public int? IdMenu { get; set; }
         public string LibelleMenu { get; set; }
-        public string PrixMenu { get; set; }
+        public double PrixMenu { get; set; }
 
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime DDNEleve { get; set; }
-        public DateTime? DateReservation { get; set; }
+        public string DDNEleve { get; set; }
+        public string DateReservation { get; set; }
+
+        public string DateMenu { get; set; }
 
     }
 

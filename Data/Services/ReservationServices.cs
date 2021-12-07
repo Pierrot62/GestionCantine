@@ -1,4 +1,6 @@
 ﻿using GestionCantine.Data.Models;
+using GestionCantine.Help;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +41,9 @@ namespace GestionCantine.Data.Services
 
         public IEnumerable<Reservation> GetAllReservation()
         {
-            return _ctx.Reservations.ToList();
+            var test =  _ctx.Reservations.Include("Menu").Include("Eleve").FirstOrDefault();
+            return _ctx.Reservations.Include("Menu").Include("Eleve").ToList();
+            
         }
 
         public Reservation GetReservationById(int id)

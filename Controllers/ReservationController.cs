@@ -4,6 +4,7 @@ using GestionCantine.Data.Dtos;
 using GestionCantine.Data.Models;
 using GestionCantine.Data.Profiles;
 using GestionCantine.Data.Services;
+using GestionCantine.Help;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;

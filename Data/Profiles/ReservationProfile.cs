@@ -13,14 +13,18 @@ namespace GestionCantine.Data.Profiles
     {
         public ReservationProfile()
         {
-    //        createmap Reservation => Eleve(nomEleve / prenom / DDN)
-
-    //Reservation => Menu(Libelle)
-            CreateMap<Reservation, ReservationDTOOut>();
             CreateMap<Reservation, ReservationDTOIn>();
 
-            CreateMap<Reservation, ReservationDTOOut>().ForMember(x => x.LibelleMenu, y => y.MapFrom(z => z.Menu.LibelleMenu)).ForMember(x => x.PrixMenu, y => y.MapFrom(z => z.Menu.PrixMenu));
-            CreateMap<Reservation, ReservationDTOOut>().ForMember(x => x.NomEleve, y => y.MapFrom(z => z.Eleve.NomEleve)).ForMember(x => x.PrenomEleve, y => y.MapFrom(z => z.Eleve.PrenomEleve)).ForMember(x => x.DDNEleve, y => y.MapFrom(z => z.Eleve.DDNEleve));
+            CreateMap<Reservation, ReservationDTOOut>()
+            .ForMember(x => x.LibelleMenu, y => y.MapFrom(z => z.Menu.LibelleMenu))
+            .ForMember(x => x.PrixMenu, y => y.MapFrom(z => z.Menu.PrixMenu))
+            .ForMember(x => x.DateMenu, y => y.MapFrom(z => ((DateTime)z.Menu.DateMenu).ToString("dd-MM-yyyy")))
+            .ForMember(x => x.NomEleve, y => y.MapFrom(z => z.Eleve.NomEleve))
+            .ForMember(x => x.PrenomEleve, y => y.MapFrom(z => z.Eleve.PrenomEleve))
+            .ForMember(x => x.DDNEleve, y => y.MapFrom(z => ((DateTime)z.Eleve.DDNEleve).ToString("dd-MM-yyyy")))
+            .ForMember(x => x.DateReservation, y => y.MapFrom(z => ((DateTime)z.DateReservation).ToString("dd-MM-yyyy")));
+
+          
         }
     }
 }
