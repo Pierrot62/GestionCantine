@@ -100,13 +100,13 @@ namespace GestionCantine.Data
 
                 entity.Property(e => e.IdModeDePaiement).HasColumnType("int(11)");
 
-                entity.HasOne(d => d.IdEleveNavigation)
+                entity.HasOne(d => d.Eleve)
                     .WithMany(p => p.Paiements)
                     .HasForeignKey(d => d.IdEleve)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Paiements_Eleves");
 
-                entity.HasOne(d => d.IdModeDePaiementNavigation)
+                entity.HasOne(d => d.ModeDePaiement)
                     .WithMany(p => p.Paiements)
                     .HasForeignKey(d => d.IdModeDePaiement)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -132,7 +132,7 @@ namespace GestionCantine.Data
 
                 entity.Property(e => e.IdMenu).HasColumnType("int(11)");
 
-                entity.HasOne(d => d.IdEleveNavigation)
+                entity.HasOne(d => d.Eleve)
                     .WithMany(p => p.Reservations)
                     .HasForeignKey(d => d.IdEleve)
                     .HasConstraintName("FK_Reservations_Eleves");
