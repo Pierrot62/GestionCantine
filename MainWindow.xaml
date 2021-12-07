@@ -27,7 +27,7 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnReservations" Content="Reservations" Grid.Row="1" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
+            <Button x:Name="BtnReservations" Content="Reservations" Grid.Row="1" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D" Click="OpenWindow"/>
             <Button Content="Menus" Grid.Row="3" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
             <Button Content="Eleves" Grid.Row="1" Grid.Column="3" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
             <Button Content="Paiements" Grid.Row="3" Grid.Column="3" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
