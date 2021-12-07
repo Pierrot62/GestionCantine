@@ -1,4 +1,5 @@
-﻿using GestionCantine.Listes;
+﻿using GestionCantine.Data;
+using GestionCantine.Listes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace GestionCantine
     /// </summary>
     public partial class MainWindow : Window
     {
+        public GCantineContext _context { get; set; } = new();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace GestionCantine
             switch (NameWindow)
             {
                 case "Reservations":
-                    Reservations ReservationWindow = new(this);
+                    Reservations ReservationWindow = new(this, _context);
                     ReservationWindow.Left = left;
                     ReservationWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
