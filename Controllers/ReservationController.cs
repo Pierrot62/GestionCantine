@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using GestionCantine.Data;
 using GestionCantine.Data.Dtos;
 using GestionCantine.Data.Models;
+using GestionCantine.Data.Profiles;
 using GestionCantine.Data.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -18,18 +20,22 @@ namespace GestionCantine.Controllers
         private readonly ReservationServices _service;
         private readonly IMapper _mapper;
 
-        public ReservationController(ReservationServices service, IMapper mapper)
+        public ReservationController(GCantineContext _context)
         {
-            _service = service;
-            _mapper = mapper;
+            _service = new ReservationServices(_context);
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<ReservationProfile>();
+            });
+            _mapper = config.CreateMapper();
         }
 
         //GET api/Reservation
         [HttpGet]
-        public ActionResult<IEnumerable<ReservationDTOOut>> GetAllReservation()
+        public IEnumerable<ReservationDTOOut> GetAllReservation()
         {
             IEnumerable<Reservation> listeReservation = _service.GetAllReservation();
-            return Ok(_mapper.Map<IEnumerable<ReservationDTOOut>>(listeReservation));
+            return _mapper.Map<IEnumerable<ReservationDTOOut>>(listeReservation);
         }
 
         //GET api/Reservation/{i}

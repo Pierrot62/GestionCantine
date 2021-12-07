@@ -21,7 +21,7 @@ namespace GestionCantine.Data.Dtos
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime DDnEleve { get; set; }
+        public DateTime DDNEleve { get; set; }
         public int IdModeDePaiement { get; set; }
         public string LibelleModeDePaement { get; set; }
     }
