@@ -29,13 +29,15 @@ namespace GestionCantine.Listes
 
         private void Init()
         {
+            
         }
 
 
 
         private void Back(object sender, RoutedEventArgs e)
         { 
-            this.Close(); 
+            this.Close();
+            this.FenetreMere.Visibility = Visibility.Visible;
         }
     }
 }
