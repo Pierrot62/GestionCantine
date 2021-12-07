@@ -32,10 +32,10 @@ namespace GestionCantine.Controllers
 
         //GET api/Reservation
         [HttpGet]
-        public ActionResult<IEnumerable<ReservationDTOOut>> GetAllReservation()
+        public IEnumerable<ReservationDTOOut> GetAllReservation()
         {
             IEnumerable<Reservation> listeReservation = _service.GetAllReservation();
-            return Ok(_mapper.Map<IEnumerable<ReservationDTOOut>>(listeReservation));
+            return _mapper.Map<IEnumerable<ReservationDTOOut>>(listeReservation);
         }
 
         //GET api/Reservation/{i}
