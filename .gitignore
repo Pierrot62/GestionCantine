@@ -2,3 +2,4 @@
 *.lo1
 *.suo
 /obj
+/.vs
