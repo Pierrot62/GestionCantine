@@ -27,7 +27,8 @@ namespace GestionCantine
 
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
-            string NameWindow = ((Button)sender).Content;
+            string NameWindow = (string)((Button)sender).Content;
+            form
         }
     }
 }
