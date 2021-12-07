@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 
 namespace GestionCantine.Data.Profiles
 {
-    class ReservationProfile : Profile
+    class MenuProfile : Profile
     {
-        public ReservationProfile()
+        public MenuProfile()
         {
-            CreateMap<Reservation, ReservationDTOOut>();
-            CreateMap<Reservation, ReservationDTOIn>();
+            CreateMap<MenuDTOIn, Menu>();
+            CreateMap<Menu, MenuDTOIn>();
+
+            CreateMap<MenuDTOOut, Menu>();
+            CreateMap<Menu, MenuDTOOut>();
         }
     }
 }

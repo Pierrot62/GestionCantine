@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionCantine.Data.Dtos
 {
-    class ReservationDTOOut
+    public class ReservationDTOOut
     {
         public int IdReservation { get; set; }
         public int? IdEleve { get; set; }
@@ -20,7 +20,7 @@ namespace GestionCantine.Data.Dtos
 
     }
 
-    class ReservationDTOIn
+    public class ReservationDTOIn
     {
         public DateTime DateReservation { get; set; }
         public int idEleve { get; set; }
