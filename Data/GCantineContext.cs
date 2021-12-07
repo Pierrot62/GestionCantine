@@ -137,7 +137,7 @@ namespace GestionCantine.Data
                     .HasForeignKey(d => d.IdEleve)
                     .HasConstraintName("FK_Reservations_Eleves");
 
-                entity.HasOne(d => d.IdMenuNavigation)
+                entity.HasOne(d => d.Menu)
                     .WithMany(p => p.Reservations)
                     .HasForeignKey(d => d.IdMenu)
                     .HasConstraintName("FK_Reservations_Menus");
@@ -178,7 +178,7 @@ namespace GestionCantine.Data
 
                 entity.Property(e => e.PrenomUser).HasMaxLength(150);
 
-                entity.HasOne(d => d.IdRoleNavigation)
+                entity.HasOne(d => d.Role)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.IdRole)
                     .OnDelete(DeleteBehavior.ClientSetNull)

@@ -13,6 +13,6 @@ namespace GestionCantine.Data.Models
         public DateTime? DateReservation { get; set; }
 
         public virtual Eleve Eleve { get; set; }
-        public virtual Menu IdMenuNavigation { get; set; }
+        public virtual Menu Menu { get; set; }
     }
 }
