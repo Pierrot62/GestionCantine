@@ -1,2 +1,4 @@
 /bin
 *.lo1
+*.suo
+/obj
