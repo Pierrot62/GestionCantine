@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace GestionCantine.Data.Dtos
 {
-    class EleveDTOIn
+    public class EleveDTOIn
     {
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
         public DateTime? Ddneleve { get; set; }
     }
-    class EleveDTOOut
+    public class EleveDTOOut
     {
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
@@ -22,7 +22,7 @@ namespace GestionCantine.Data.Dtos
         public double SoldeEleve { get; set; }
     }
 
-    class EleveReservationDTOOut
+    public class EleveReservationDTOOut
     {
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
