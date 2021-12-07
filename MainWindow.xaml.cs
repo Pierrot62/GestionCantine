@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionCantine.Formulaires;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,14 @@ namespace GestionCantine
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
             string NameWindow = (string)((Button)sender).Content;
-            form
+            //switch (NameWindow)
+            //{
+            //    case "Reservartions":
+            //        Reservations window = new();
+            //        window.Show();
+            //    default:
+            //        break;
+            //}
         }
     }
 }
