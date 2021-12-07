@@ -26,27 +26,27 @@ namespace GestionCantine.Controllers
 
         //GET api/Reservation
         [HttpGet]
-        public ActionResult<IEnumerable<ReservationDTO>> GetAllReservation()
+        public ActionResult<IEnumerable<ReservationDTOOut>> GetAllReservation()
         {
             IEnumerable<Reservation> listeReservation = _service.GetAllReservation();
-            return Ok(_mapper.Map<IEnumerable<ReservationDTO>>(listeReservation));
+            return Ok(_mapper.Map<IEnumerable<ReservationDTOOut>>(listeReservation));
         }
 
         //GET api/Reservation/{i}
         [HttpGet("{id}", Name = "GetReservationById")]
-        public ActionResult<ReservationDTO> GetReservationById(int id)
+        public ActionResult<ReservationDTOOut> GetReservationById(int id)
         {
             Reservation commandItem = _service.GetReservationById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<ReservationDTO>(commandItem));
+                return Ok(_mapper.Map<ReservationDTOOut>(commandItem));
             }
             return NotFound();
         }
 
         //POST api/Reservation
         [HttpPost]
-        public ActionResult<ReservationDTO> CreateReservation(ReservationDTOIn objIn)
+        public ActionResult<ReservationDTOOut> CreateReservation(ReservationDTOIn objIn)
         {
             Reservation obj = _mapper.Map<Reservation>(objIn);
             _service.AddReservation(obj);
