@@ -32,8 +32,8 @@ namespace GestionCantine
             switch (NameWindow)
             {
                 case "Reservations":
-                    Reservations window = new();
-                    window.ShowDialog();
+                    Reservations ReservationWindow = new();
+                    ReservationWindow.ShowDialog();
                     break;
                 case "Eleves":
                     Eleves EleveWindow = new();
