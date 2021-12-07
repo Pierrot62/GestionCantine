@@ -65,6 +65,7 @@ namespace GestionCantine.Controllers
             }
             _mapper.Map(obj, objFromRepo);
             _service.UpdateEleve(objFromRepo);
+            return NoContent();
         }
 
         //DELETE api/Eleve/{id}
