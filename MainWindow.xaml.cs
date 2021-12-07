@@ -29,32 +29,32 @@ namespace GestionCantine
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
             string NameWindow = (string)((Button)sender).Content;
-            double hauteur = this.Height;
-            double largueur = this.Width; 
+            double left = this.Left;
+            double top = this.Top; 
             switch (NameWindow)
             {
                 case "Reservations":
-                    Reservations ReservationWindow = new();
-                    ReservationWindow.Width = largueur;
-                    ReservationWindow.Height = hauteur;
+                    Reservations ReservationWindow = new(this);
+                    ReservationWindow.Left = left;
+                    ReservationWindow.Top = top;
                     ReservationWindow.ShowDialog();
                     break;
                 case "Eleves":
                     Eleves EleveWindow = new();
-                    EleveWindow.Width = largueur;
-                    EleveWindow.Height = hauteur;
+                    EleveWindow.Left = left;
+                    EleveWindow.Top = top;
                     EleveWindow.ShowDialog();
                     break;
                 case "Paiements":
                     Paiements PaiementWindow = new();
-                    PaiementWindow.Width = largueur;
-                    PaiementWindow.Height = hauteur;
+                    PaiementWindow.Left = left;
+                    PaiementWindow.Top = top;
                     PaiementWindow.ShowDialog();
                     break;
                 case "Menus":
                     Menus MenuWindow = new();
-                    MenuWindow.Width = largueur;
-                    MenuWindow.Height = hauteur;
+                    MenuWindow.Left = left;
+                    MenuWindow.Top = top;
                     MenuWindow.ShowDialog();
                     break;
                 default:
