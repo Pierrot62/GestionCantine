@@ -2050,6 +2050,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "Microsoft.AspNetCore.JsonPatch >= 5.0.12",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.12",
@@ -2103,6 +2104,10 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[10.1.1, )"
+          },
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[8.1.1, )"
