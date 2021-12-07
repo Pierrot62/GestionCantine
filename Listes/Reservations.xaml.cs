@@ -24,11 +24,18 @@ namespace GestionCantine.Listes
         {
             InitializeComponent();
             this.FenetreMere = FenetreMere;
+            Init();
         }
 
-        private void Back(object sender, RoutedEventArgs e)
+        private void Init()
         {
-            this.FenetreMere.Close();
+        }
+
+
+
+        private void Back(object sender, RoutedEventArgs e)
+        { 
+            this.Close(); 
         }
     }
 }
