@@ -7,18 +7,36 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Formulaires\Menus.xaml.cs">
+    <Compile Update="Formulaires\Eleves.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Formulaires\Paiements.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Listes\Eleves.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Listes\Menus.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Listes\Paiements.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Formulaires\Menus.xaml">
+    <Page Update="Formulaires\Eleves.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Formulaires\Paiements.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\Eleves.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Listes\Menus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\Paiements.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

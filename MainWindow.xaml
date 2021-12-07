@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:GestionCantine"
         mc:Ignorable="d"
         Title="Gestion Cantine" Height="450" Width="800">
-    <Grid Background="#FF293241">
+   
+    <Grid Background="{DynamicResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Label Content="Gestion Cantine" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="45" Foreground="#FF98C1D9"/>
+        <Label Content="Gestion Cantine" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="45" Foreground="{DynamicResource TextLabel}"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.2*"/>
@@ -27,10 +28,10 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnReservations" Content="Reservations" Grid.Row="1" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D" Click="OpenWindow"/>
-            <Button Content="Menus" Grid.Row="3" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
-            <Button Content="Eleves" Grid.Row="1" Grid.Column="3" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
-            <Button Content="Paiements" Grid.Row="3" Grid.Column="3" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
+            <Button x:Name="BtnReservations" Content="Reservations" Grid.Row="1" Grid.Column="1" Background="{DynamicResource FondBoutton}" FontSize="{DynamicResource Font}" BorderBrush="{DynamicResource BorderBoutton}" Click="OpenWindow"/>
+            <Button x:Name="BtnMenus"  Content="Menus" Grid.Row="3" Grid.Column="1" Background="{DynamicResource FondBoutton}" FontSize="20" BorderBrush="{DynamicResource BorderBoutton}" Click="OpenWindow"/>
+            <Button x:Name="BtnEleves" Content="Eleves" Grid.Row="1" Grid.Column="3" Background="{DynamicResource FondBoutton}" FontSize="20" BorderBrush="{DynamicResource BorderBoutton}" Click="OpenWindow"/>
+            <Button x:Name="BtnPaiements" Content="Paiements" Grid.Row="3" Grid.Column="3" Background="{DynamicResource FondBoutton}" FontSize="20" BorderBrush="{DynamicResource BorderBoutton}" Click="OpenWindow"/>
         </Grid>
     </Grid>
 </Window>
