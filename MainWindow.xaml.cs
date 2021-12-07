@@ -39,7 +39,6 @@ namespace GestionCantine
                     ReservationWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
                     ReservationWindow.ShowDialog();
-                    this.Visibility = Visibility.Visible;
                     break;
                 case "Eleves":
                     Eleves EleveWindow = new();
