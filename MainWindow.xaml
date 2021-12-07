@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionCantine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Gestion Cantine" Height="450" Width="800">
     <Grid Background="#FF293241">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -27,10 +27,10 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <Button Content="Reservations" Grid.Row="1" Grid.Column="1" Background="#FF98C1D9" FontSize="20"/>
-            <Button Content="Menus" Grid.Row="3" Grid.Column="1" Background="#FF98C1D9" FontSize="20"/>
-            <Button Content="Eleves" Grid.Row="1" Grid.Column="3" Background="#FF98C1D9" FontSize="20"/>
-            <Button Content="Paiements" Grid.Row="3" Grid.Column="3" Background="#FF98C1D9" FontSize="20"/>
+            <Button x:Name="BtnReservations" Content="Reservations" Grid.Row="1" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
+            <Button Content="Menus" Grid.Row="3" Grid.Column="1" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
+            <Button Content="Eleves" Grid.Row="1" Grid.Column="3" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
+            <Button Content="Paiements" Grid.Row="3" Grid.Column="3" Background="#FF98C1D9" FontSize="20" BorderBrush="#FFEE6C4D"/>
         </Grid>
     </Grid>
 </Window>
