@@ -29,14 +29,27 @@ namespace GestionCantine
         private void OpenWindow(object sender, RoutedEventArgs e)
         {
             string NameWindow = (string)((Button)sender).Content;
-            //switch (NameWindow)
-            //{
-            //    case "Reservartions":
-            //        Reservations window = new();
-            //        window.Show();
-            //    default:
-            //        break;
-            //}
+            switch (NameWindow)
+            {
+                case "Reservations":
+                    Reservations ReservationWindow = new();
+                    ReservationWindow.ShowDialog();
+                    break;
+                case "Eleves":
+                    Eleves EleveWindow = new();
+                    EleveWindow.ShowDialog();
+                    break;
+                case "Paiements":
+                    Paiements PaiementsWindow = new();
+                    PaiementsWindow.ShowDialog();
+                    break;
+                case "Menus":
+                    Menus MenuWindow = new();
+                    MenuWindow.ShowDialog();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

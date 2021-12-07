@@ -6,7 +6,39 @@
         xmlns:local="clr-namespace:GestionCantine.Formulaires"
         mc:Ignorable="d"
         Title="Menus" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#FF293241">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Label" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="45" Foreground="#FF98C1D9" Grid.RowSpan="2"/>
+        <Label Content="Label" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#FF98C1D9" />
+        <Label Content="Label" Grid.Column="1" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#FF98C1D9" />
+        <Label Content="Label" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Foreground="#FF98C1D9" />
+        <TextBox Grid.Column="3" Grid.Row="4" Text="TextBox" VerticalContentAlignment="Center"/>
+        <TextBox Grid.Column="3" Grid.Row="6" Text="TextBox" VerticalContentAlignment="Center"/>
+        <TextBox Grid.Column="3" Grid.Row="8" Text="TextBox" VerticalContentAlignment="Center"/>
+        <Button Content="Button" Grid.Column="4" Grid.Row="1"/>
+        <Button Content="Button" Grid.Column="1" Grid.Row="10"/>
+        <Button Content="Button" Grid.Column="3" Grid.Row="10"/>
+
     </Grid>
 </Window>
