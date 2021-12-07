@@ -7,11 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Formulaires\Menus.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Listes\Menus.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Formulaires\Menus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Listes\Menus.xaml">
       <SubType>Designer</SubType>
     </Page>
