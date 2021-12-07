@@ -31,7 +31,6 @@ C:\Users\59011-07-05\Desktop\GestionCantine\bin\Debug\net5.0-windows\Swashbuckle
 C:\Users\59011-07-05\Desktop\GestionCantine\bin\Debug\net5.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\59011-07-05\Desktop\GestionCantine\bin\Debug\net5.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\59011-07-05\Desktop\GestionCantine\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine.csproj.AssemblyReference.cache
 C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\59011-07-05\Desktop\GestionCantine\obj\Debug\net5.0-windows\GestionCantine_MarkupCompile.cache
