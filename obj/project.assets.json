@@ -2050,6 +2050,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "Microsoft.AspNetCore.JsonPatch >= 5.0.12",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.12",
@@ -2060,39 +2061,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\59011-07-05\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\59011-07-07\\.nuget\\packages\\": {},
->>>>>>> 6bb0f68b2424317757c4d4052c174d0fd10bfb9e
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\59011-07-05\\Desktop\\GestionCantine\\GestionCantine.csproj",
       "projectName": "GestionCantine",
       "projectPath": "C:\\Users\\59011-07-05\\Desktop\\GestionCantine\\GestionCantine.csproj",
       "packagesPath": "C:\\Users\\59011-07-05\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\59011-07-05\\Desktop\\GestionCantine\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\59011-07-07\\Desktop\\GestionCantine\\GestionCantine.csproj",
-      "projectName": "GestionCantine",
-      "projectPath": "C:\\Users\\59011-07-07\\Desktop\\GestionCantine\\GestionCantine.csproj",
-      "packagesPath": "C:\\Users\\59011-07-07\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\59011-07-07\\Desktop\\GestionCantine\\obj\\",
->>>>>>> 6bb0f68b2424317757c4d4052c174d0fd10bfb9e
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\59011-07-05\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\59011-07-07\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 6bb0f68b2424317757c4d4052c174d0fd10bfb9e
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2119,6 +2104,10 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[10.1.1, )"
+          },
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[8.1.1, )"
@@ -2171,5 +2160,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problème de lecture du fichier cache C:\\Users\\59011-07-05\\Desktop\\GestionCantine\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
