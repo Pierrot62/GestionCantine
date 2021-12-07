@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GestionCantine.Listes
 {
     /// <summary>
-    /// Logique d'interaction pour Menu.xaml
+    /// Logique d'interaction pour Menus.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class Menus : Window
     {
-        public Menu()
+        public Menus()
         {
             InitializeComponent();
         }
