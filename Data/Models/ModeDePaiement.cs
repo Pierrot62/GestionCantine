@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace GestionCantine.Data.Models
 {
-    public partial class Modesdepaiement
+    public partial class ModeDePaiement
     {
-        public Modesdepaiement()
+        public ModeDePaiement()
         {
             Paiements = new HashSet<Paiement>();
         }

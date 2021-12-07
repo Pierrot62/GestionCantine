@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace GestionCantine.Data.Models
 {
-    public partial class Elefe
+    public partial class Eleve
     {
-        public Elefe()
+        public Eleve()
         {
             Paiements = new HashSet<Paiement>();
             Reservations = new HashSet<Reservation>();

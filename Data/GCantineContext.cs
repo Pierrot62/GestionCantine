@@ -18,9 +18,9 @@ namespace GestionCantine.Data
         {
         }
 
-        public virtual DbSet<Elefe> Eleves { get; set; }
+        public virtual DbSet<Eleve> Eleves { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<Modesdepaiement> Modesdepaiements { get; set; }
+        public virtual DbSet<ModeDePaiement> Modesdepaiements { get; set; }
         public virtual DbSet<Paiement> Paiements { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
@@ -37,7 +37,7 @@ namespace GestionCantine.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Elefe>(entity =>
+            modelBuilder.Entity<Eleve>(entity =>
             {
                 entity.HasKey(e => e.IdEleve)
                     .HasName("PRIMARY");
@@ -69,7 +69,7 @@ namespace GestionCantine.Data
                 entity.Property(e => e.LibelleMenu).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Modesdepaiement>(entity =>
+            modelBuilder.Entity<ModeDePaiement>(entity =>
             {
                 entity.HasKey(e => e.IdModeDePaiement)
                     .HasName("PRIMARY");

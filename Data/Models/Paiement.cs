@@ -13,7 +13,7 @@ namespace GestionCantine.Data.Models
         public int IdEleve { get; set; }
         public int IdModeDePaiement { get; set; }
 
-        public virtual Elefe IdEleveNavigation { get; set; }
-        public virtual Modesdepaiement IdModeDePaiementNavigation { get; set; }
+        public virtual Eleve IdEleveNavigation { get; set; }
+        public virtual ModeDePaiement IdModeDePaiementNavigation { get; set; }
     }
 }
