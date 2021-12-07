@@ -16,7 +16,7 @@ namespace GestionCantine.Data.Models
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime? Ddneleve { get; set; }
+        public DateTime? DDNEleve { get; set; }
         public double? SoldeEleve { get; set; }
 
         public virtual ICollection<Paiement> Paiements { get; set; }

@@ -11,14 +11,14 @@ namespace GestionCantine.Data.Dtos
     {
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime? Ddneleve { get; set; }
+        public DateTime? DDNEleve { get; set; }
     }
     public class EleveDTOOut
     {
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime? Ddneleve { get; set; }
+        public DateTime? DDNEleve { get; set; }
         public double SoldeEleve { get; set; }
     }
 
@@ -27,7 +27,7 @@ namespace GestionCantine.Data.Dtos
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime? Ddneleve { get; set; }
+        public DateTime? DDNEleve { get; set; }
         public double SoldeEleve { get; set; }
         public virtual List<ReservationDTOOut> Reservations { get; set; }
     }

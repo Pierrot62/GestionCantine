@@ -47,7 +47,7 @@ namespace GestionCantine.Data
 
                 entity.Property(e => e.IdEleve).HasColumnType("int(11)");
 
-                entity.Property(e => e.Ddneleve)
+                entity.Property(e => e.DDNEleve)
                     .HasColumnType("date")
                     .HasColumnName("DDNEleve");
 
