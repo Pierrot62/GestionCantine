@@ -23,5 +23,26 @@ namespace GestionCantine.Formulaires
         {
             InitializeComponent();
         }
+
+        public void init()
+        {
+            this.DialogResult = false;
+        }
+
+        private void Continuer(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.Fermer();
+        }
+
+        private void Annuler(object sender, RoutedEventArgs e)
+        {
+
+            this.Fermer();
+        }
+        private void Fermer()
+        {
+            this.Close();
+        }
     }
 }

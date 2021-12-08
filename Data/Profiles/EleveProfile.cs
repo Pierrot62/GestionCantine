@@ -17,7 +17,7 @@ namespace GestionCantine.Data.Profiles
             CreateMap<EleveDTOIn, Eleve>();
             CreateMap<Eleve, EleveDTOIn>();
             CreateMap<EleveDTOOut, Eleve>();
-            CreateMap<Eleve, EleveDTOOut>();
+            CreateMap<Eleve, EleveDTOOut>().ForMember(d => d.DDNEleve, o => o.MapFrom(s => ((DateTime)s.DDNEleve).ToString("dd-MM-yyyy")));
             CreateMap<EleveReservationDTOOut, Eleve>();
             CreateMap<Eleve, EleveReservationDTOOut>();
         }

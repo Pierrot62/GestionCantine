@@ -17,11 +17,11 @@ namespace GestionCantine.Data.Dtos
     {
         public int IdPaiement { get; set; }
         public double? MontantPaiement { get; set; }
-        public DateTime? DatePaiement { get; set; }
+        public string DatePaiement { get; set; }
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
-        public DateTime DDNEleve { get; set; }
+        public string DDNEleve { get; set; }
         public int IdModeDePaiement { get; set; }
         public string LibelleModeDePaement { get; set; }
     }
