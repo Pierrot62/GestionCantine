@@ -32,9 +32,9 @@ namespace GestionCantine.Formulaires
         {
             InitializeComponent();
 
-            MainMenu = mainMenu;
-            Menu = menu;
-            Action = action;
+            this.MainMenu = mainMenu;
+            this.Menu = menu;
+            this.Action = action;
             this.Id = (menu == null) ? 0 : menu.IdMenu;
 
             //InitPage();
@@ -63,4 +63,4 @@ namespace GestionCantine.Formulaires
     }
 
 }
-}
+

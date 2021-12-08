@@ -70,9 +70,9 @@ namespace GestionCantine.Listes
             }
             else
             {
-                
-            }
 
+            }
+        }
             public void ActionMenu(MenuDTOIn menu, string action, int id)
             {
                 // On met à jour l'article en base de données
@@ -89,12 +89,10 @@ namespace GestionCantine.Listes
 
                 ActualiserTableau();
             }
-
-            private void ActualiserTableau()
-            {
-                dgMenus.ItemsSource = _MenuController.GetAllMenu();
-            }
-
+        
+        private void ActualiserTableau()
+        {
+            dgMenus.ItemsSource = _MenuController.GetAllMenu();
         }
     }
 }
