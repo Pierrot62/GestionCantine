@@ -23,10 +23,10 @@ namespace GestionCantine.Formulaires
     /// </summary>
     public partial class MenusForm : Window
     {
-        Menus MainMenu;
-        MenuDTOOut Menu;
-        string Action;
-        int Id;
+        private Menus MainMenu { get; set; }
+        private MenuDTOOut Menu { get; set; }
+        private string Action { get; set; }
+        private int Id { get; set; }
 
         public MenusForm(string action, Menus mainMenu, MenuDTOOut menu, GCantineContext _context)
         {
@@ -51,7 +51,7 @@ namespace GestionCantine.Formulaires
                     
                     break;
                 case "Modifier":
-                    TextDateMenu.Text = Menu.DateMenu.ToString();  
+                    DPDateMenu.SelectedDate = DateTime.Parse(Menu.DateMenu);
                     TextLibelleMenu.Text = Menu.LibelleMenu;
                     TextPrixMenu.Text = Menu.PrixMenu.ToString();
                     break;
@@ -64,9 +64,9 @@ namespace GestionCantine.Formulaires
         {
             MenuDTOIn menu = new MenuDTOIn
             {
-                DateMenu = DateTime.Parse(TextDateMenu.Text),
+                DateMenu = DateTime.Parse(DPDateMenu.Text),
                 LibelleMenu = TextLibelleMenu.Text,
-                PrixMenu = int.Parse(TextPrixMenu.Text)
+                PrixMenu = double.Parse(TextPrixMenu.Text)
             };
             //appel du controller de la fenêtre mère
             this.MainMenu.ActionMenu(menu, this.Action, this.Id);
