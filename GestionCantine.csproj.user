@@ -10,7 +10,7 @@
     <Compile Update="Formulaires\Eleves.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Formulaires\MenuForm.xaml.cs">
+    <Compile Update="Formulaires\MenusForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Formulaires\Paiements.xaml.cs">
@@ -30,7 +30,7 @@
     <Page Update="Formulaires\Eleves.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Formulaires\MenuForm.xaml">
+    <Page Update="Formulaires\MenusForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Formulaires\Paiements.xaml">
