@@ -13,6 +13,9 @@
     <Compile Update="Formulaires\Paiements.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Formulaires\ReservationsForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Listes\Eleves.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Formulaires\Paiements.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Formulaires\ReservationsForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Listes\Eleves.xaml">
