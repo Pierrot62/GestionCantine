@@ -64,7 +64,7 @@ namespace GestionCantine.Formulaires
             PaiementDTOIn paiement = new PaiementDTOIn {
                 MontantPaiement = double.Parse(FpMontant.Text),
                 DatePaiement=FpDate.SelectedDate,
-                IdEleve = (int)FpModeDePaiement.SelectedValue,
+                IdEleve = (int)FpEleve.SelectedValue,
                 IdModeDePaiement = (int)FpModeDePaiement.SelectedValue
             };
             this.FenetreMere.ActionPaiement(paiement, this.Action, this.Id);
