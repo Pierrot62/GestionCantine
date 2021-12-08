@@ -41,9 +41,7 @@ namespace GestionCantine.Data.Services
 
         public IEnumerable<Reservation> GetAllReservation()
         {
-            var test =  _ctx.Reservations.Include("Menu").Include("Eleve").FirstOrDefault();
             return _ctx.Reservations.Include("Menu").Include("Eleve").ToList();
-            
         }
 
         public Reservation GetReservationById(int id)

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GestionCantine.Formulaires
 {
     /// <summary>
-    /// Logique d'interaction pour Reservations.xaml
+    /// Logique d'interaction pour ReservationsForm.xaml
     /// </summary>
-    public partial class Reservations : Window
+    public partial class ReservationsForm : Window
     {
-        public Reservations()
+        public ReservationsForm()
         {
             InitializeComponent();
         }
