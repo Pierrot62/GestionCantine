@@ -51,15 +51,9 @@ namespace GestionCantine.Formulaires
                     
                     break;
                 case "Modifier":
-                    //Libelle
-                    TextDateMenu.Text = Menu.DateMenu.ToString();
-                    TextDateMenu.IsEnabled = false;
-                    //Quantité
+                    TextDateMenu.Text = Menu.DateMenu.ToString();  
                     TextLibelleMenu.Text = Menu.LibelleMenu;
-                    TextLibelleMenu.IsEnabled = false;
-                    //Categorie
                     TextPrixMenu.Text = Menu.PrixMenu.ToString();
-                    TextPrixMenu.IsEnabled = false;
                     break;
                
                 default:

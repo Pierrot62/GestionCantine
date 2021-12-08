@@ -14,6 +14,7 @@ namespace GestionCantine.Data.Profiles
         public ReservationProfile()
         {
             CreateMap<Reservation, ReservationDTOIn>();
+            CreateMap<ReservationDTOIn, Reservation>();
 
             CreateMap<Reservation, ReservationDTOOut>()
             .ForMember(x => x.LibelleMenu, y => y.MapFrom(z => z.Menu.LibelleMenu))
@@ -24,7 +25,9 @@ namespace GestionCantine.Data.Profiles
             .ForMember(x => x.DDNEleve, y => y.MapFrom(z => ((DateTime)z.Eleve.DDNEleve).ToString("dd-MM-yyyy")))
             .ForMember(x => x.DateReservation, y => y.MapFrom(z => ((DateTime)z.DateReservation).ToString("dd-MM-yyyy")));
 
-          
+            CreateMap<ReservationDTOOut, Reservation>();
+
+
         }
     }
 }

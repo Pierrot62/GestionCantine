@@ -20,6 +20,6 @@ namespace GestionCantine.Data.Dtos
         public DateTime? DateMenu { get; set; }
         public string LibelleMenu { get; set; }
         public double? PrixMenu { get; set; }
-        public virtual ICollection<ReservationDTOOut> Reservations { get; set; }
+        //public virtual ICollection<ReservationDTOOut> Reservations { get; set; }
     }
 }

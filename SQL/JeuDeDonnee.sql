@@ -25,12 +25,12 @@ INSERT INTO `Eleves`(`IdEleve`, `NomEleve`,`PrenomEleve`,`DDNEleve`,`SoldeEleve`
 
 
 
-INSERT INTO `Menus`(`idMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (1,"2017-09-04","Charcutrie/Poulet/Glace", 6.5);
-INSERT INTO `Menus`(`idMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (2,"2017-09-05","Peche/Pâte/Baba", 6.5);
-INSERT INTO `Menus`(`idMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (3,"2017-09-06","Œuf/Curry/Compote", 6.5);
-INSERT INTO `Menus`(`idMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (4,"2017-09-07","Salade/Carbonade/Île", 6.5);
-INSERT INTO `Menus`(`idMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (5,"2017-09-08","Feuilleté/Steak/Crème", 6.5);
-INSERT INTO `Menus`(`idMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (6,"2017-09-09","Soupe/Chili/Tarte", 6.5);
+INSERT INTO `Menus`(`IdMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (1,"2017-09-04","Charcutrie/Poulet/Glace", 6.5);
+INSERT INTO `Menus`(`IdMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (2,"2017-09-05","Peche/Pâte/Baba", 6.5);
+INSERT INTO `Menus`(`IdMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (3,"2017-09-06","Œuf/Curry/Compote", 6.5);
+INSERT INTO `Menus`(`IdMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (4,"2017-09-07","Salade/Carbonade/Île", 6.5);
+INSERT INTO `Menus`(`IdMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (5,"2017-09-08","Feuilleté/Steak/Crème", 6.5);
+INSERT INTO `Menus`(`IdMenu`, `DateMenu`,`LibelleMenu`, `prixMenu`) VALUES (6,"2017-09-09","Soupe/Chili/Tarte", 6.5);
 
 INSERT INTO `Paiements`(`IdPaiement`, `MontantPaiement`,`DatePaiement`,`IdEleve`,`IdModeDePaiement`) VALUES (1,50,"2017-09-05",1,2);
 INSERT INTO `Paiements`(`IdPaiement`, `MontantPaiement`,`DatePaiement`,`IdEleve`,`IdModeDePaiement`) VALUES (2,50,"2017-09-10",2,2);
