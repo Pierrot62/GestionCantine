@@ -118,11 +118,13 @@ namespace GestionCantine.Formulaires
                     }
                     break;
                 case "Modifier":
-                        obj.DateReservation = (DateTime)dateReservationPicker.SelectedDate;
-                        obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
-                        obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
-                        _ReservationController.UpdateReservation(_SelectedObj.IdReservation, obj);
-                        this.Back();
+                    obj.DateReservation = (DateTime)dateReservationPicker.SelectedDate;
+                    obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
+                    obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
+                    _ReservationController.UpdateReservation(_SelectedObj.IdReservation, obj);
+                    _EleveController.UpdateSoldeEleve((int)_SelectedObj.IdEleve, (double)_SelectedObj.PrixMenu);
+                    _EleveController.UpdateSoldeEleve(obj.IdEleve, (double)-((MenuDTOOut)dgMenu.SelectedItem).PrixMenu);
+                    this.Back();
                     break;
                 default:
                     break;
