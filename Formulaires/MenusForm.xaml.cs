@@ -37,7 +37,34 @@ namespace GestionCantine.Formulaires
             this.Action = action;
             this.Id = (menu == null) ? 0 : menu.IdMenu;
 
-            //InitPage();
+            InitPage();
+        }
+
+        private void InitPage()
+        {
+            Button_Valider.Click += (s, e) => ActionMenu(); // On affecte la fonction au bouton
+            Button_Valider.Content = this.Action;
+
+            switch (this.Action)
+            {
+                case "Ajouter":
+                    
+                    break;
+                case "Modifier":
+                    //Libelle
+                    TextDateMenu.Text = Menu.DateMenu.ToString();
+                    TextDateMenu.IsEnabled = false;
+                    //Quantité
+                    TextLibelleMenu.Text = Menu.LibelleMenu;
+                    TextLibelleMenu.IsEnabled = false;
+                    //Categorie
+                    TextPrixMenu.Text = Menu.PrixMenu.ToString();
+                    TextPrixMenu.IsEnabled = false;
+                    break;
+               
+                default:
+                    break;
+            }
         }
         private void ActionMenu()
         {

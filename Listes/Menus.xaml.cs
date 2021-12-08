@@ -75,8 +75,6 @@ namespace GestionCantine.Listes
         }
             public void ActionMenu(MenuDTOIn menu, string action, int id)
             {
-                // On met à jour l'article en base de données
-                // en fonction de l'action
                 switch (action)
                 {
                     case "Ajouter":
