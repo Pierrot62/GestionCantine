@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GestionCantine.Formulaires
 {
     /// <summary>
-    /// Logique d'interaction pour MenuForm.xaml
+    /// Logique d'interaction pour MenusForm.xaml
     /// </summary>
-    public partial class MenuForm : Window
+    public partial class MenusForm : Window
     {
-        public MenuForm()
+        public MenusForm()
         {
             InitializeComponent();
         }
