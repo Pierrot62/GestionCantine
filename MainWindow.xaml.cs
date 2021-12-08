@@ -42,6 +42,7 @@ namespace GestionCantine
                     ReservationWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
                     ReservationWindow.ShowDialog();
+                    this.Visibility = Visibility.Visible;
                     break;
                 case "Eleves":
                     Eleves EleveWindow = new(this, _context);
@@ -49,6 +50,7 @@ namespace GestionCantine
                     EleveWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
                     EleveWindow.ShowDialog();
+                    this.Visibility = Visibility.Visible;
                     break;
                 case "Paiements":
                     Paiements PaiementWindow = new(this, _context);
@@ -56,6 +58,7 @@ namespace GestionCantine
                     PaiementWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
                     PaiementWindow.ShowDialog();
+                    this.Visibility = Visibility.Visible;
                     break;
                 case "Menus":
                     Menus MenuWindow = new(this, _context);
@@ -63,6 +66,7 @@ namespace GestionCantine
                     MenuWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
                     MenuWindow.ShowDialog();
+                    this.Visibility = Visibility.Visible;
                     break;
                 default:
                     break;
