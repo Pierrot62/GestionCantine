@@ -29,7 +29,7 @@
                     <ColumnDefinition Width="0.1*"/>
                 </Grid.ColumnDefinitions>
 
-                <DataGrid x:Name="dg" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False">
+                <DataGrid x:Name="dg" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False" CellStyle="{DynamicResource SelectedBackground}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Libelle" Binding="{Binding LibelleModeDePaiement}" Width="2*"/>
                     </DataGrid.Columns>

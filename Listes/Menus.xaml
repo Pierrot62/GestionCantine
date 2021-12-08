@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionCantine.Listes"
         mc:Ignorable="d"
-       Title="Menus" Height="450" Width="800" Background="{DynamicResource BackgroundWindow}">
+        Title="Menus" Height="450" MaxHeight="450" Width="800" MaxWidth="800" Background="{DynamicResource BackgroundWindow}">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
