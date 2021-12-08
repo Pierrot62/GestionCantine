@@ -51,7 +51,7 @@ namespace GestionCantine
                     EleveWindow.ShowDialog();
                     break;
                 case "Paiements":
-                    Paiements PaiementWindow = new();
+                    Paiements PaiementWindow = new(this, _context);
                     PaiementWindow.Left = left;
                     PaiementWindow.Top = top;
                     this.Visibility = Visibility.Hidden;
