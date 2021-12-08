@@ -54,7 +54,7 @@ namespace GestionCantine.Formulaires
             _EleveController = new EleveController(_Ctx);
             _MenuController = new MenuController(_Ctx);
             this.dgEleve.ItemsSource = _EleveController.GetAllEleve();
-            this.dgMenu.ItemsSource = _MenuController.GetAllMenu();
+            this.dgMenu.ItemsSource = _MenuController.GetAllReservationMenu();
             dgEleve.DisplayMemberPath = "NomEleve";
             dgEleve.SelectedValuePath = "IdEleve";
             dgMenu.DisplayMemberPath = "LibelleMenu";

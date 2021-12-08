@@ -51,7 +51,6 @@ namespace GestionCantine.Listes
                 this.FenetreMere.Left = this.Left;
                 this.FenetreMere.Top = this.Top;
             }
-            this.FenetreMere.Visibility = Visibility.Visible;
             this.Close();
         }
 

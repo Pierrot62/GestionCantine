@@ -42,6 +42,11 @@ namespace GestionCantine.Data.Services
             return _context.Menus.ToList();
         }
 
+        public IEnumerable<Menu> GetAllReservationMenu()
+        {
+            return _context.Menus.Where(x => x.DateMenu > DateTime.Now).ToList();
+        }
+
         public Menu GetMenuById(int id)
         {
             return _context.Menus.FirstOrDefault(obj => obj.IdMenu == id);
