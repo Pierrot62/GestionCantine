@@ -31,10 +31,10 @@ namespace GestionCantine.Controllers
         }
 
         //GET api/Eleve
-        public ActionResult<IEnumerable<EleveDTOOut>> GetAllEleve()
+        public IEnumerable<EleveDTOOut> GetAllEleve()
         {
             IEnumerable<Eleve> listeEleve = _service.GetAllEleve();
-            return Ok(_mapper.Map<IEnumerable<EleveDTOOut>>(listeEleve));
+            return _mapper.Map<IEnumerable<EleveDTOOut>>(listeEleve);
         }
 
         //GET api/Eleve/{i}
