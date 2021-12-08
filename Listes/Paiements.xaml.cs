@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionCantine.Controllers;
+using GestionCantine.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,20 @@ namespace GestionCantine.Listes
     /// </summary>
     public partial class Paiements : Window
     {
-        public Paiements()
+        private MainWindow FenetreMere { get; set; }
+        private PaiementController _PaiementController { get; set; }
+
+        public Paiements(MainWindow FenetreMere, GCantineContext _ctx)
         {
             InitializeComponent();
+            this.FenetreMere = FenetreMere;
+            this._PaiementController = new PaiementController(_ctx);
+            Init();
+        }
+
+        private void Init()
+        {
+            dgPaiements.ItemsSource = _PaiementController.GetAllPaiement();
         }
     }
 }
