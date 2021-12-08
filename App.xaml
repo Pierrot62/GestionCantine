@@ -11,5 +11,14 @@
         <SolidColorBrush x:Key="FondBoutton" Color="#FF98C1D9"/>
          <SolidColorBrush x:Key="TextLabel" Color="#FF98C1D9"/>
         <SolidColorBrush x:Key="BackgroundWindow" Color="#FF293241"/>
+        <Style x:Key="SelectedBackground" TargetType="DataGridCell">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource BackgroundWindow}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextLabel}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
     </Application.Resources>
 </Application>
