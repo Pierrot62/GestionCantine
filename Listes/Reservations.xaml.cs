@@ -57,9 +57,11 @@ namespace GestionCantine.Listes
 
         private void Button_Action(object sender, RoutedEventArgs e)
         {
-
-
             ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (Reservation)dg.SelectedItem, _Ctx);
+            reservationForm.Left = this.Left;
+            reservationForm.Top = this.Top;
+            this.Visibility = Visibility.Hidden;
+            reservationForm.ShowDialog();
         }
     }
 }
