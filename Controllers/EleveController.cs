@@ -80,6 +80,10 @@ namespace GestionCantine.Controllers
             return NoContent();
         }
 
+        public void UpdateSoldeEleve(int id, double montant)
+        {
+            _service.Operation(id, montant);
+        }
 
     }
 }
