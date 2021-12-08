@@ -22,8 +22,8 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" FontWeight="Bold" Text="Les données que vous vous appretez à supprimer vont être définitivement perdues." TextWrapping="Wrap" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-        <Button x:Name="BtnAnnuler" Content="Annuler" Grid.Row="3" Grid.Column="1" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}"/>
-        <Button x:Name="BtnContinuer" Content="Continuer" Grid.Row="3" Grid.Column="3" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}"/>
+        <Button x:Name="BtnAnnuler" Content="Annuler" Grid.Row="3" Grid.Column="1" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" Click="Annuler"/>
+        <Button x:Name="BtnContinuer" Content="Continuer" Grid.Row="3" Grid.Column="3" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" Click="Continuer"/>
     </Grid>
 
 </Window>
