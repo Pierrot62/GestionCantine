@@ -28,6 +28,7 @@ namespace GestionCantine.Listes
         private EleveController _EleveController { get; set; }
         public GCantineContext _context { get; set; }
 
+
         public Eleves(MainWindow FenetreMere, GCantineContext _ctx)
         {
             InitializeComponent();
@@ -77,7 +78,6 @@ namespace GestionCantine.Listes
                     if (dg.SelectedItem == null)
                     {
                         //Afficher window Erreur
-                        Console.WriteLine("T'es un con");
                     }
                     else
                     {
@@ -90,11 +90,16 @@ namespace GestionCantine.Listes
                     }
                     break;
                 case "Supprimer":
-                    Suppression windowSupp = new();
+                    EleveDTOOut E = (EleveDTOOut)dg.SelectedItem;
+                    this.Opacity = 0.25;
+                    Suppression windowSupp = new Suppression();
                     windowSupp.Left = left;
                     windowSupp.Top = top;
-                    this.Opacity = 0.25;
-                    windowSupp.Show();
+                    if ((bool)windowSupp.ShowDialog())
+                    {
+                        _EleveController.DeleteEleve(E.IdEleve);
+                        Init();
+                    }
                     break;
                 default:
                     break;
