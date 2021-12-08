@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GestionCantine.Data;
+using GestionCantine.Data.Models;
+using GestionCantine.Listes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,22 @@ namespace GestionCantine.Formulaires
     /// </summary>
     public partial class ReservationsForm : Window
     {
-        public ReservationsForm()
+        private string _Action { get; set; }
+        private Reservations _FenetreMere { get; set; } // Fenetre Mere qui a pour nom Reservations
+        private Reservation _SelectedObj { get; set; } // Le model Reservation
+        private GCantineContext _Ctx { get; set; }
+        public ReservationsForm(string action, Reservations FenetreMere,Reservation selectedObj,GCantineContext context)
         {
             InitializeComponent();
+            this._Action = action;
+            this._FenetreMere = FenetreMere;
+            this._SelectedObj = selectedObj;
+            this._Ctx = context;
+        }
+
+        private void Init()
+        {
+
         }
     }
 }
