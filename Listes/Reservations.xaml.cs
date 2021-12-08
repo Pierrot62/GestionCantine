@@ -39,7 +39,7 @@ namespace GestionCantine.Listes
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
             dg.ItemsSource = _ReservationController.GetAllReservation();
         }
