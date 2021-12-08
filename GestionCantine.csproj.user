@@ -15,10 +15,16 @@
     <Compile Update="Formulaires\MenusForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Formulaires\ModeDePaiementForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Listes\Eleves.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Listes\Menus.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Listes\ModeDePaiements.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Listes\Paiements.xaml.cs">
@@ -32,10 +38,16 @@
     <Page Update="Formulaires\MenusForm.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Formulaires\ModeDePaiementForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Listes\Eleves.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Listes\Menus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\ModeDePaiements.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Listes\Paiements.xaml">

@@ -64,6 +64,13 @@ namespace GestionCantine
                     this.Visibility = Visibility.Hidden;
                     MenuWindow.ShowDialog();
                     break;
+                case "Modes de paiements":
+                    ModeDePaiements ModePaiementWindow = new(this, _context);
+                    ModePaiementWindow.Left = left;
+                    ModePaiementWindow.Top = top;
+                    this.Visibility = Visibility.Hidden;
+                    ModePaiementWindow.ShowDialog();
+                    break;
                 default:
                     break;
             }
