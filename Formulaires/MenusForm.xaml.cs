@@ -1,4 +1,8 @@
-﻿using System;
+﻿using GestionCantine.Controllers;
+using GestionCantine.Data;
+using GestionCantine.Data.Dtos;
+using GestionCantine.Listes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +23,71 @@ namespace GestionCantine.Formulaires
     /// </summary>
     public partial class MenusForm : Window
     {
-        public MenusForm()
+        Menus MainMenu;
+        MenuDTOOut Menu;
+        string Action;
+        int Id;
+
+        public MenusForm(string action, Menus mainMenu, MenuDTOOut menu, GCantineContext _context)
         {
             InitializeComponent();
+
+            this.MainMenu = mainMenu;
+            this.Menu = menu;
+            this.Action = action;
+            this.Id = (menu == null) ? 0 : menu.IdMenu;
+
+            InitPage();
+        }
+
+        private void InitPage()
+        {
+            Button_Valider.Click += (s, e) => ActionMenu(); // On affecte la fonction au bouton
+            Button_Valider.Content = this.Action;
+
+            switch (this.Action)
+            {
+                case "Ajouter":
+                    
+                    break;
+                case "Modifier":
+                    //Libelle
+                    TextDateMenu.Text = Menu.DateMenu.ToString();
+                    TextDateMenu.IsEnabled = false;
+                    //Quantité
+                    TextLibelleMenu.Text = Menu.LibelleMenu;
+                    TextLibelleMenu.IsEnabled = false;
+                    //Categorie
+                    TextPrixMenu.Text = Menu.PrixMenu.ToString();
+                    TextPrixMenu.IsEnabled = false;
+                    break;
+               
+                default:
+                    break;
+            }
+        }
+        private void ActionMenu()
+        {
+            MenuDTOIn menu = new MenuDTOIn
+            {
+                DateMenu = DateTime.Parse(TextDateMenu.Text),
+                LibelleMenu = TextLibelleMenu.Text,
+                PrixMenu = int.Parse(TextPrixMenu.Text)
+            };
+            //appel du controller de la fenêtre mère
+            this.MainMenu.ActionMenu(menu, this.Action, this.Id);
+            Retour();
+        }
+        public void Retour(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public void Retour()
+        {
+            this.Close();
         }
     }
+
 }
+

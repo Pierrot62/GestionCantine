@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="0.1*"/>
                 </Grid.ColumnDefinitions>
 
-                <DataGrid x:Name="dg" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False">
+                <DataGrid x:Name="dgMenus" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Date" Binding="{Binding DateMenu}" Width="1*"/>
                         <DataGridTextColumn Header="Menu du jour" Binding="{Binding LibelleMenu}" Width="1.5*"/>
@@ -47,9 +47,9 @@
                         <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="1" Content="Ajouter" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15"/>
-                    <Button Grid.Row="3" Content="Modifier" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15"/>
-                    <Button Grid.Row="5" Content="Supprimer" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15"/>
+                    <Button Grid.Row="1" Content="Ajouter" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15" Click="Button_Action"/>
+                    <Button Grid.Row="3" Content="Modifier" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15" Click="Button_Action"/>
+                    <Button Grid.Row="5" Content="Supprimer" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15" Click="Button_Action"/>
                 </Grid>
 
             </Grid>

@@ -1,5 +1,7 @@
 ﻿using GestionCantine.Controllers;
 using GestionCantine.Data;
+using GestionCantine.Data.Dtos;
+using GestionCantine.Formulaires;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,5 +38,59 @@ namespace GestionCantine.Listes
         {
             dgPaiements.ItemsSource = _PaiementController.GetAllPaiement();
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            if (this.Left != this.FenetreMere.Left || this.Top != this.FenetreMere.Top)
+            {
+                this.FenetreMere.Left = this.Left;
+                this.FenetreMere.Top = this.Top;
+            }
+            this.FenetreMere.Visibility = Visibility.Visible;
+            this.Close();
+        }
+
+        private void Button_Action(object sender, RoutedEventArgs e)
+        {
+            PaiementDTOOut paiement = (PaiementDTOOut)dgPaiements.SelectedItem;
+            string action = (string)((Button)sender).Content;
+
+            if (paiement==null &&(action== "Modifier"|| action== "Supprimer"))
+            {
+                MessageBox.Show("Pas de sélection");
+            }
+            else if (action == "Supprimer")
+            {
+                Suppression fautsuppr = new Suppression();
+                if ((bool)fautsuppr.ShowDialog())
+                {
+                    _PaiementController.DeletePaiement(paiement.IdPaiement);
+                    Init();
+                }
+            }
+            else
+            {
+
+            }
+            
+        }
+
+        public void ActionPaiement(PaiementDTOIn Paiement, string action, int id)
+        {
+            // On met à jour l'Paiement en base de données
+            // en fonction de l'action
+            switch (action)
+            {
+                case "Ajouter":
+                    _PaiementController.CreatePaiement(Paiement);
+                    break;
+                case "Modifier":
+                    _PaiementController.UpdatePaiement(id, Paiement);
+                    break;
+            }
+            Init();
+        }
+
+
     }
 }

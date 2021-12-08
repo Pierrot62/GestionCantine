@@ -1,5 +1,7 @@
 ﻿using GestionCantine.Controllers;
 using GestionCantine.Data;
+using GestionCantine.Data.Dtos;
+using GestionCantine.Formulaires;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +36,8 @@ namespace GestionCantine.Listes
 
         private void Init()
         {
-            dg.ItemsSource = _MenuController.GetAllMenu();
+            dgMenus.ItemsSource = _MenuController.GetAllMenu();
         }
-
-
 
         private void Back(object sender, RoutedEventArgs e)
         {
@@ -48,6 +48,49 @@ namespace GestionCantine.Listes
             }
             this.FenetreMere.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void Button_Action(object sender, RoutedEventArgs e)
+        {
+            MenuDTOOut menu = (MenuDTOOut)dgMenus.SelectedItem;
+            string action = (string)((Button)sender).Content;
+
+            if (menu == null && (action == "Modifier" || action == "Supprimer"))
+            {
+                MessageBox.Show("Pas de sélection");
+            }
+            else if (action == "Supprimer")
+            {
+                Suppression windowSupp = new Suppression();
+                if ((bool)windowSupp.ShowDialog())
+                {
+                    _MenuController.DeleteMenu(menu.IdMenu);
+                    Init();
+                }
+            }
+            else
+            {
+
+            }
+        }
+            public void ActionMenu(MenuDTOIn menu, string action, int id)
+            {
+                switch (action)
+                {
+                    case "Ajouter":
+                        _MenuController.CreateMenu(menu);
+                        break;
+                    case "Modifier":
+                        _MenuController.UpdateMenu(id, menu);
+                        break;
+                }
+
+                ActualiseDgMenus();
+            }
+        
+        private void ActualiseDgMenus()
+        {
+            dgMenus.ItemsSource = _MenuController.GetAllMenu();
         }
     }
 }
