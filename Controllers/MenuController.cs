@@ -53,8 +53,9 @@ namespace GestionCantine.Controllers
 
         //POST api/Menu
 
-        public ActionResult<MenuDTOIn> CreateMenu(Menu obj)
+        public ActionResult<MenuDTOOut> CreateMenu(MenuDTOIn objIn)
         {
+            Menu obj = _mapper.Map<Menu>(objIn);
             _service.AddMenu(obj);
             return CreatedAtRoute(nameof(GetMenuById), new { Id = obj.IdMenu }, obj);
         }
