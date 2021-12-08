@@ -55,7 +55,7 @@ namespace GestionCantine.Listes
             PaiementDTOOut paiement = (PaiementDTOOut)dgPaiements.SelectedItem;
             string action = (string)((Button)sender).Content;
 
-            if (paiement==null &&(action== "Modifier"|| action== "Supprimer"))
+            if (paiement==null &&(action!= "Ajouter"))
             {
                 MessageBox.Show("Pas de sélection");
             }
@@ -70,7 +70,8 @@ namespace GestionCantine.Listes
             }
             else
             {
-
+                PaiementForm formulaire = new PaiementForm(action, this, paiement, FenetreMere._context);
+                formulaire.ShowDialog();
             }
             
         }

@@ -27,10 +27,10 @@ namespace GestionCantine.Controllers
             _mapper = config.CreateMapper();
         }
 
-        public ActionResult<IEnumerable<ModeDePaiementDTOOut>> GetAllModeDePaiement()
+        public IEnumerable<ModeDePaiementDTOOut> GetAllModeDePaiement()
         {
             IEnumerable<ModeDePaiement> listeModeDePaiement = _service.GetAllModeDePaiements();
-            return Ok(_mapper.Map<IEnumerable<ModeDePaiementDTOOut>>(listeModeDePaiement));
+            return _mapper.Map<IEnumerable<ModeDePaiementDTOOut>>(listeModeDePaiement);
         }
 
         public ActionResult<ModeDePaiementDTOOut> GetModeDePaiementById(int id)
