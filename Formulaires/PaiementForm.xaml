@@ -31,7 +31,7 @@
             <ColumnDefinition Width="18*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="FpEleve" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="5" CanUserAddRows="False" AutoGenerateColumns="False">
+        <DataGrid x:Name="FpEleve" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="5" CanUserAddRows="False" AutoGenerateColumns="False" CellStyle="{DynamicResource SelectedBackground}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nom" Binding="{Binding NomEleve}" Width="2*"/>
                 <DataGridTextColumn Header="Prenom" Binding="{Binding PrenomEleve}" Width="2*"/>

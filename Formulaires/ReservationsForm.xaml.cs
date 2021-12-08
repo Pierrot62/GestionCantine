@@ -100,11 +100,18 @@ namespace GestionCantine.Formulaires
                 case "Ajouter":
                     if (((EleveDTOOut)dgEleve.SelectedItem) != null && ((MenuDTOOut)dgMenu.SelectedItem) != null)
                     { 
-                    obj.DateReservation = (DateTime) dateReservationPicker.SelectedDate;
-                    obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
-                    obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
-                    _ReservationController.CreateReservation(obj);
-                    this.Back();
+                        if(((double)((EleveDTOOut)dgEleve.SelectedItem).SoldeEleve) >= ((double)((MenuDTOOut)dgMenu.SelectedItem).PrixMenu))
+                        {
+                            obj.DateReservation = (DateTime) dateReservationPicker.SelectedDate;
+                            obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
+                            obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
+                            _ReservationController.CreateReservation(obj);
+                            _EleveController.UpdateSoldeEleve((int) obj.IdEleve, (double)-((MenuDTOOut)dgMenu.SelectedItem).PrixMenu);
+                            this.Back();
+                        } else
+                        {
+                            MessageBox.Show("Peut pas bouffer, y'a pas assez de thunes.");
+                        }
                     } else
                     {
                         MessageBox.Show("Pas de sélection");
@@ -115,6 +122,8 @@ namespace GestionCantine.Formulaires
                     obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
                     obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
                     _ReservationController.UpdateReservation(_SelectedObj.IdReservation, obj);
+                    _EleveController.UpdateSoldeEleve((int)_SelectedObj.IdEleve, (double)_SelectedObj.PrixMenu);
+                    _EleveController.UpdateSoldeEleve(obj.IdEleve, (double)-((MenuDTOOut)dgMenu.SelectedItem).PrixMenu);
                     this.Back();
                     break;
                 default:

@@ -2,6 +2,7 @@
 using GestionCantine.Data;
 using GestionCantine.Data.Dtos;
 using GestionCantine.Listes;
+using GestionCantine.MessageDErreur;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,15 +63,22 @@ namespace GestionCantine.Formulaires
         }
         private void ActionMenu()
         {
-            MenuDTOIn menu = new MenuDTOIn
+            if (ControlSaisieCorrect())
             {
-                DateMenu = DateTime.Parse(DPDateMenu.Text),
-                LibelleMenu = TextLibelleMenu.Text,
-                PrixMenu = double.Parse(TextPrixMenu.Text)
-            };
-            //appel du controller de la fenêtre mère
-            this.MainMenu.ActionMenu(menu, this.Action, this.Id);
-            Retour();
+                MenuDTOIn menu = new MenuDTOIn
+                {
+                    DateMenu = DateTime.Parse(DPDateMenu.Text),
+                    LibelleMenu = TextLibelleMenu.Text,
+                    PrixMenu = double.Parse(TextPrixMenu.Text)
+                };
+                //appel du controller de la fenêtre mère
+                this.MainMenu.ActionMenu(menu, this.Action, this.Id);
+                Retour();
+            }
+            else
+            {
+                new SaisieFormIncorrect().ShowDialog();
+            }
         }
         public void Retour(object sender, RoutedEventArgs e)
         {
@@ -80,6 +88,12 @@ namespace GestionCantine.Formulaires
         public void Retour()
         {
             this.Close();
+        }
+
+        private bool ControlSaisieCorrect()
+        {
+            TextPrixMenu.Text = TextPrixMenu.Text.Replace('.', ',');
+            return double.TryParse(TextPrixMenu.Text, out double sortie) && DPDateMenu.SelectedDate != null && TextLibelleMenu.Text != null;
         }
     }
 

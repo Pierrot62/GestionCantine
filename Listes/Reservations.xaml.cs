@@ -26,6 +26,7 @@ namespace GestionCantine.Listes
     {
         private MainWindow _FenetreMere { get; set; }
         private ReservationController _ReservationController { get; set; }
+        private EleveController _EleveController { get; set; }
         private GCantineContext _Ctx { get; set; }
 
         public Reservations(MainWindow _FenetreMere, GCantineContext _ctx)
@@ -33,11 +34,12 @@ namespace GestionCantine.Listes
             InitializeComponent();
             this._FenetreMere = _FenetreMere;
             this._ReservationController = new ReservationController(_ctx);
+            this._EleveController = new EleveController(_ctx);
             this._Ctx = _ctx;
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
             dg.ItemsSource = _ReservationController.GetAllReservation();
         }
@@ -70,18 +72,46 @@ namespace GestionCantine.Listes
                 Suppression fautsuppr = new Suppression();
                 if ((bool)fautsuppr.ShowDialog())
                 {
+                    if (DateTime.Now < DateTime.Parse(reservation.DateMenu))
+                    { 
+                        _EleveController.UpdateSoldeEleve((int) reservation.IdEleve, (double) reservation.PrixMenu);
+                        
+                    } else
+                    {
+                        MessageBox.Show("La réservation a été supprimée mais la personne n'est pas recréditée car la date du menu est inférieure à la date d'aujourd'hui");
+                    }
                     _ReservationController.DeleteReservation(reservation.IdReservation);
                     Init();
                 }
             }
             else
             {
-                ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (ReservationDTOOut)dg.SelectedItem, _Ctx);
-                reservationForm.Left = this.Left;
-                reservationForm.Top = this.Top;
-                this.Visibility = Visibility.Hidden;
-                reservationForm.ShowDialog();
-                this.Init();
+                if (action == "Modifier" && DateTime.Now > DateTime.Parse(reservation.DateMenu))
+                {
+                    MessageBox.Show("Impossible de modifier une réservation d'un menu déjà passé.");
+                } else
+                {
+                    ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (ReservationDTOOut)dg.SelectedItem, _Ctx);
+                    reservationForm.Left = this.Left;
+                    reservationForm.Top = this.Top;
+                    this.Visibility = Visibility.Hidden;
+                    reservationForm.ShowDialog();
+                    this.Init();
+                }
+
+
+                //if (DateTime.Now < DateTime.Parse(reservation.DateMenu))
+                //{
+                //    ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (ReservationDTOOut)dg.SelectedItem, _Ctx);
+                //    reservationForm.Left = this.Left;
+                //    reservationForm.Top = this.Top;
+                //    this.Visibility = Visibility.Hidden;
+                //    reservationForm.ShowDialog();
+                //    this.Init();
+                //} else
+                //{
+                //    MessageBox.Show("Impossible de modifier une réservation d'un menu déjà passé.");
+                //}
             }
 
         }
