@@ -1,5 +1,7 @@
 ﻿using GestionCantine.Controllers;
 using GestionCantine.Data;
+using GestionCantine.Formulaires;
+using GestionCantine.Data.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +50,11 @@ namespace GestionCantine.Listes
             }
             this.FenetreMere.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void Button_Action(object sender, RoutedEventArgs e)
+        {
+            Reservations reservation = new();
         }
     }
 }
