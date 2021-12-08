@@ -34,10 +34,10 @@
     <Label Content="Nom" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Right" />
     <Label Content="Prenom" Grid.Column="1" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Right" />
     <Label Content="Date de naissance" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Right" />
-    <TextBox Grid.Column="3" Grid.Row="4" Text="TextBox" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20"/>
-    <TextBox Grid.Column="3" Grid.Row="6" Text="TextBox" VerticalContentAlignment="Center" FontSize="20"/>
-    <DatePicker Grid.Row="8" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Content="Valider" Grid.Column="1" Grid.Row="10" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" FontSize="20"/>
-        <Button Content="Retour" Grid.Column="3" Grid.Row="10" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" Grid.ColumnSpan="2" FontSize="20" Click="Back"/>
+    <TextBox x:Name="Nom" Grid.Column="3" Grid.Row="4" Text="" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20"/>
+        <TextBox x:Name="Prenom" Grid.Column="3" Grid.Row="6" Text="" VerticalContentAlignment="Center" FontSize="20"/>
+        <DatePicker x:Name="DateDeNaissance" Grid.Row="8" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Content="Valider" Grid.Column="1" Grid.Row="10" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" FontSize="20" Click="Go"/>
+        <Button Content="Retour" Grid.Column="3" Grid.Row="10" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" Grid.ColumnSpan="2" FontSize="20"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using GestionCantine.Controllers;
+using GestionCantine.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,15 +29,24 @@ namespace GestionCantine.Formulaires
             InitializeComponent();
         }
 
-        private void Back(object sender, RoutedEventArgs e)
+        private void Go(object sender, RoutedEventArgs e)
         {
-            if (this.Left != this.FenetreMere.Left || this.Top != this.FenetreMere.Top)
-            {
-                this.FenetreMere.Left = this.Left;
-                this.FenetreMere.Top = this.Top;
-            }
-            this.FenetreMere.Visibility = Visibility.Visible;
-            this.Close();
+            string NomEleve = this.Nom.Text;
+            string PrenomEleve = this.Prenom.Text;
+            DateTime? DDNEleve = this.DateDeNaissance.SelectedDate;
+            Eleve E = new Eleve(NomEleve, PrenomEleve, DDNEleve);
+            _EleveController.CreateEleve(E);
         }
+
+        //private void Back(object sender, RoutedEventArgs e)
+        //{
+        //    if (this.Left != this.FenetreMere.Left || this.Top != this.FenetreMere.Top)
+        //    {
+        //        this.FenetreMere.Left = this.Left;
+        //        this.FenetreMere.Top = this.Top;
+        //    }
+        //    this.FenetreMere.Visibility = Visibility.Visible;
+        //    this.Close();
+        //}
     }
 }

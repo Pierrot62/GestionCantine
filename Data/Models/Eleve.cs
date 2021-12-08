@@ -21,5 +21,6 @@ namespace GestionCantine.Data.Models
 
         public virtual ICollection<Paiement> Paiements { get; set; }
         public virtual ICollection<Reservation> Reservations { get; set; }
+
     }
 }
