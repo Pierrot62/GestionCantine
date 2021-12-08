@@ -25,12 +25,14 @@ namespace GestionCantine.Listes
     {
         private MainWindow FenetreMere { get; set; }
         private PaiementController _PaiementController { get; set; }
+        private EleveController _EleveController { get; set; }
 
         public Paiements(MainWindow FenetreMere, GCantineContext _ctx)
         {
             InitializeComponent();
             this.FenetreMere = FenetreMere;
             this._PaiementController = new PaiementController(_ctx);
+            this._EleveController = new EleveController(_ctx);
             Init();
         }
 
@@ -64,6 +66,7 @@ namespace GestionCantine.Listes
                 Suppression fautsuppr = new Suppression();
                 if ((bool)fautsuppr.ShowDialog())
                 {
+                    _EleveController.UpdateSoldeEleve(paiement.IdEleve, (double) - paiement.MontantPaiement);
                     _PaiementController.DeletePaiement(paiement.IdPaiement);
                     Init();
                 }
@@ -83,9 +86,12 @@ namespace GestionCantine.Listes
             switch (action)
             {
                 case "Ajouter":
+                    _EleveController.UpdateSoldeEleve(Paiement.IdEleve, (double)Paiement.MontantPaiement);
                     _PaiementController.CreatePaiement(Paiement);
                     break;
                 case "Modifier":
+                    _EleveController.UpdateSoldeEleve(_PaiementController.GetPaiementById(id).IdEleve, (double) - _PaiementController.GetPaiementById(id).MontantPaiement);
+                    _EleveController.UpdateSoldeEleve(Paiement.IdEleve, (double)Paiement.MontantPaiement);
                     _PaiementController.UpdatePaiement(id, Paiement);
                     break;
             }

@@ -33,14 +33,10 @@ namespace GestionCantine.Controllers
             return _mapper.Map<IEnumerable<PaiementDTOOut>>(listePaiement);
         }
 
-        public ActionResult<PaiementDTOOut> GetPaiementById(int id)
+        public PaiementDTOOut GetPaiementById(int id)
         {
             Paiement commandItem = _service.GetPaiementById(id);
-            if (commandItem != null)
-            {
-                return Ok(_mapper.Map<PaiementDTOOut>(commandItem));
-            }
-            return NotFound();
+            return _mapper.Map<PaiementDTOOut>(commandItem);
         }
 
         public void CreatePaiement(PaiementDTOIn obj)
