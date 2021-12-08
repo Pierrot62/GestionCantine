@@ -39,7 +39,28 @@ namespace GestionCantine.Formulaires
 
             //InitPage();
         }
+        private void ActionMenu()
+        {
+            MenuDTOIn menu = new MenuDTOIn
+            {
+                DateMenu = DateTime.Parse(TextDateMenu.Text),
+                LibelleMenu = TextLibelleMenu.Text,
+                PrixMenu = int.Parse(TextPrixMenu.Text)
+            };
+            //appel du controller de la fenêtre mère
+            this.MainMenu.ActionMenu(menu, this.Action, this.Id);
+            Retour();
+        }
+        public void Retour(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
-     
+        public void Retour()
+        {
+            this.Close();
+        }
     }
+
+}
 }
