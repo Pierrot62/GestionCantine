@@ -18,19 +18,19 @@ using System.Windows.Shapes;
 
 namespace GestionCantine.Listes
 {
-    /// <summary>
-    /// Logique d'interaction pour Menus.xaml
-    /// </summary>
+   
     public partial class Menus : Window
     {
         private MainWindow FenetreMere { get; set; }
         private MenuController _MenuController { get; set; }
+        public GCantineContext _context { get; set; } 
 
-        public Menus(MainWindow FenetreMere, GCantineContext _ctx)
+        public Menus(MainWindow FenetreMere, GCantineContext __context)
         {
             InitializeComponent();
+            _context = new GCantineContext();
             this.FenetreMere = FenetreMere;
-            this._MenuController = new MenuController(_ctx);
+            this._MenuController = new MenuController(_context);
             Init();
         }
 
@@ -48,6 +48,25 @@ namespace GestionCantine.Listes
             }
             this.FenetreMere.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void Button_Actions_Click(object sender, RoutedEventArgs e)
+        {
+            MenuDTOOut menu = (MenuDTOOut)dgMenus.SelectedItem;
+            string nom = (string)((Button)sender).Content;
+           
+            if (menu == null && (nom == "Modifier" || nom == "Supprimer"))
+            {
+                MessageBox.Show("Pas de sélection");
+            }
+            else
+            {
+                
+                MenusForm actions = new MenusForm(nom, this, menu, _context);
+                this.Opacity = 0.7;
+                actions.ShowDialog();
+                this.Opacity = 1;
+            }
         }
 
         private void Button_Action(object sender, RoutedEventArgs e)
