@@ -34,8 +34,8 @@ namespace GestionCantine.Formulaires
             string NomEleve = this.Nom.Text;
             string PrenomEleve = this.Prenom.Text;
             DateTime? DDNEleve = this.DateDeNaissance.SelectedDate;
-            Eleve E = new Eleve(NomEleve, PrenomEleve, DDNEleve);
-            _EleveController.CreateEleve(E);
+            Eleve E = new Eleve(NomEleve, PrenomEleve, (DateTime)DDNEleve);
+            //_EleveController.CreateEleve();
         }
 
         //private void Back(object sender, RoutedEventArgs e)

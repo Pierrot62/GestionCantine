@@ -13,6 +13,13 @@ namespace GestionCantine.Data.Models
             Reservations = new HashSet<Reservation>();
         }
 
+        public Eleve(string nomEleve, string prenomEleve, DateTime ddnEleve)
+        {
+            NomEleve = nomEleve;
+            PrenomEleve = prenomEleve;
+            DDNEleve = ddnEleve;
+
+        }
         public int IdEleve { get; set; }
         public string NomEleve { get; set; }
         public string PrenomEleve { get; set; }
