@@ -28,14 +28,14 @@ namespace GestionCantine.Formulaires
     {
         private string _Action { get; set; }
         private Reservations _FenetreMere { get; set; } // Fenetre Mere qui a pour nom Reservations
-        private Reservation _SelectedObj { get; set; } // Le model Reservation
+        private ReservationDTOOut _SelectedObj { get; set; } // Le model Reservation
         private GCantineContext _Ctx { get; set; }
 
         private ReservationController _ReservationController { get; set; }
         private EleveController _EleveController { get; set; }
         private MenuController _MenuController { get; set; }
 
-        public ReservationsForm(string action, Reservations FenetreMere,Reservation selectedObj,GCantineContext context)
+        public ReservationsForm(string action, Reservations FenetreMere,ReservationDTOOut selectedObj,GCantineContext context)
         {
             InitializeComponent();
             this._Action = action;
@@ -81,7 +81,6 @@ namespace GestionCantine.Formulaires
                     obj.DateReservation = (DateTime) dateReservationPicker.SelectedDate;
                     obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
                     obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
-                    obj.Dump();
                     _ReservationController.CreateReservation(obj);
                     if (this.Left != this._FenetreMere.Left || this.Top != this._FenetreMere.Top)
                     {

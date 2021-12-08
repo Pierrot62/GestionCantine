@@ -17,7 +17,7 @@ namespace GestionCantine.Data.Dtos
     public class MenuDTOOut
     {
         public int IdMenu { get; set; }
-        public DateTime? DateMenu { get; set; }
+        public string DateMenu { get; set; }
         public string LibelleMenu { get; set; }
         public double? PrixMenu { get; set; }
         //public virtual ICollection<ReservationDTOOut> Reservations { get; set; }

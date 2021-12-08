@@ -57,39 +57,11 @@ namespace GestionCantine.Listes
 
         private void Button_Action(object sender, RoutedEventArgs e)
         {
-            //if ((Reservation) dg.SelectedItem == null)
-            //{
-            //    if ((string)((Button)sender).Content == "Ajouter")
-            //    {
-            //ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (Reservation)dg.SelectedItem, _Ctx);
-            //reservationForm.Left = this.Left;
-            //reservationForm.Top = this.Top;
-            //this.Visibility = Visibility.Hidden;
-            //reservationForm.ShowDialog();
-            //    } else
-            //    {
-            //        MessageBox.Show("Pas de sélection !");
-            //    }
-            //}else
-            //{
-            //    if ((string)((Button)sender).Content == "Ajouter")
-            //    {
-            //        ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (Reservation)dg.SelectedItem, _Ctx);
-            //        reservationForm.Left = this.Left;
-            //        reservationForm.Top = this.Top;
-            //        this.Visibility = Visibility.Hidden;
-            //        reservationForm.ShowDialog();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Pas de sélection !");
-            //    }
-            //}
             ReservationDTOOut reservation = (ReservationDTOOut)dg.SelectedItem;
 
             string action = (string)((Button)sender).Content;
 
-            if (reservation == null && action != "Ajouter")
+            if (reservation == null && (action == "Modifier" || action == "Supprimer"))
             {
                 MessageBox.Show("Pas de sélection");
             }
@@ -104,11 +76,12 @@ namespace GestionCantine.Listes
             }
             else
             {
-                ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (Reservation)dg.SelectedItem, _Ctx);
+                ReservationsForm reservationForm = new((string)((Button)sender).Content, this, (ReservationDTOOut)dg.SelectedItem, _Ctx);
                 reservationForm.Left = this.Left;
                 reservationForm.Top = this.Top;
                 this.Visibility = Visibility.Hidden;
                 reservationForm.ShowDialog();
+                this.Init();
             }
 
         }
