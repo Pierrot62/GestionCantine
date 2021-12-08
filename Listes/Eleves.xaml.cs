@@ -62,6 +62,7 @@ namespace GestionCantine.Listes
 
         private void Action(object sender, RoutedEventArgs e)
         {
+            EleveDTOOut E = (EleveDTOOut)dg.SelectedItem;
             string mode = (string)((Button)sender).Content;
             double left = this.Left;
             double top = this.Top;
@@ -81,7 +82,6 @@ namespace GestionCantine.Listes
                     }
                     else
                     {
-                        EleveDTOOut E = (EleveDTOOut)dg.SelectedItem;
                         EleveForm formEleveUp = new(this, _context, mode, E);
                         formEleveUp.Left = left;
                         formEleveUp.Top = top;
@@ -90,7 +90,6 @@ namespace GestionCantine.Listes
                     }
                     break;
                 case "Supprimer":
-                    EleveDTOOut E = (EleveDTOOut)dg.SelectedItem;
                     this.Opacity = 0.25;
                     Suppression windowSupp = new Suppression();
                     windowSupp.Left = left;
@@ -100,6 +99,7 @@ namespace GestionCantine.Listes
                         _EleveController.DeleteEleve(E.IdEleve);
                         Init();
                     }
+                    this.Opacity = 1;
                     break;
                 default:
                     break;
