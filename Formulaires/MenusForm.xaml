@@ -34,9 +34,9 @@
         <Label Content="Menu du" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Right" />
         <Label Content="Libelle" Grid.Column="1" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Right" />
         <Label Content="Prix" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Right" />
-        <TextBox Grid.Column="3" Grid.Row="4" Text="TextBox" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20"/>
-        <TextBox Grid.Column="3" Grid.Row="6" Text="TextBox" VerticalContentAlignment="Center" FontSize="20"/>
-        <TextBox Grid.Column="3" Grid.Row="8" Text="TextBox" VerticalContentAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="TextDateMenu" Grid.Column="3" Grid.Row="4" Text="TextBox" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20"/>
+        <TextBox x:Name="TextLibelleMenu" Grid.Column="3" Grid.Row="6" Text="TextBox" VerticalContentAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="TextPrixMenu" Grid.Column="3" Grid.Row="8" Text="TextBox" VerticalContentAlignment="Center" FontSize="20"/>
         <Button Content="Valider" Grid.Column="1" Grid.Row="10" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" FontSize="20"/>
         <Button Content="Retour" Grid.Column="3" Grid.Row="10" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" Grid.ColumnSpan="2" FontSize="20"/>
 

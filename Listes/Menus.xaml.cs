@@ -37,8 +37,6 @@ namespace GestionCantine.Listes
             dg.ItemsSource = _MenuController.GetAllMenu();
         }
 
-
-
         private void Back(object sender, RoutedEventArgs e)
         {
             if (this.Left != this.FenetreMere.Left || this.Top != this.FenetreMere.Top)

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using GestionCantine.Controllers;
+using GestionCantine.Data;
+using GestionCantine.Data.Dtos;
+using GestionCantine.Listes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +23,23 @@ namespace GestionCantine.Formulaires
     /// </summary>
     public partial class MenusForm : Window
     {
-        public MenusForm()
+        Menus MainMenu;
+        MenuDTOOut Menu;
+        string Action;
+        int Id;
+
+        public MenusForm(string action, Menus mainMenu, MenuDTOOut menu, GCantineContext _context)
         {
             InitializeComponent();
+
+            MainMenu = mainMenu;
+            Menu = menu;
+            Action = action;
+            this.Id = (menu == null) ? 0 : menu.IdMenu;
+
+            //InitPage();
         }
+
+     
     }
 }
