@@ -1,5 +1,7 @@
 ﻿using GestionCantine.Controllers;
 using GestionCantine.Data;
+using GestionCantine.Data.Dtos;
+using GestionCantine.Data.Models;
 using GestionCantine.Formulaires;
 using System;
 using System.Collections.Generic;
@@ -24,18 +26,20 @@ namespace GestionCantine.Listes
     {
         private MainWindow FenetreMere { get; set; }
         private EleveController _EleveController { get; set; }
+        public GCantineContext _context { get; set; }
 
         public Eleves(MainWindow FenetreMere, GCantineContext _ctx)
         {
             InitializeComponent();
             this.FenetreMere = FenetreMere;
-            this._EleveController = new EleveController(_ctx);
+            this._context = _ctx;
             Init();
         }
 
         private void Init()
-        {
-            dg.ItemsSource = _EleveController.GetAllEleve();
+        {            
+            this._EleveController = new EleveController(_context);
+            RefreshDG();
         }
 
 
@@ -50,6 +54,11 @@ namespace GestionCantine.Listes
             this.Close();
         }
 
+        public void RefreshDG()
+        {
+            this.dg.ItemsSource = _EleveController.GetAllEleve();
+        }
+
         private void Action(object sender, RoutedEventArgs e)
         {
             string mode = (string)((Button)sender).Content;
@@ -58,23 +67,33 @@ namespace GestionCantine.Listes
             switch (mode)
             {
                 case "Ajouter":
-                    EleveForm formEleveAdd = new();
+                    EleveForm formEleveAdd = new(this, _context, mode);
                     formEleveAdd.Left = left;
                     formEleveAdd.Top = top;
                     this.Visibility = Visibility.Hidden;
                     formEleveAdd.Show();
                     break;
                 case "Modifier":
-                    EleveForm formEleveUp = new();
-                    formEleveUp.Left = left;
-                    formEleveUp.Top = top;
-                    this.Visibility = Visibility.Hidden;
-                    formEleveUp.Show();
+                    if (dg.SelectedItem == null)
+                    {
+                        //Afficher window Erreur
+                        Console.WriteLine("T'es un con");
+                    }
+                    else
+                    {
+                        EleveDTOOut E = (EleveDTOOut)dg.SelectedItem;
+                        EleveForm formEleveUp = new(this, _context, mode, E);
+                        formEleveUp.Left = left;
+                        formEleveUp.Top = top;
+                        this.Visibility = Visibility.Hidden;
+                        formEleveUp.Show();
+                    }
                     break;
                 case "Supprimer":
                     Suppression windowSupp = new();
                     windowSupp.Left = left;
                     windowSupp.Top = top;
+                    this.Opacity = 0.25;
                     windowSupp.Show();
                     break;
                 default:

@@ -37,7 +37,6 @@ namespace GestionCantine.Formulaires
 
         private void Annuler(object sender, RoutedEventArgs e)
         {
-
             this.Fermer();
         }
         private void Fermer()
