@@ -58,9 +58,10 @@ namespace GestionCantine
                     PaiementWindow.ShowDialog();
                     break;
                 case "Menus":
-                    Menus MenuWindow = new();
+                    Menus MenuWindow = new(this, _context);
                     MenuWindow.Left = left;
                     MenuWindow.Top = top;
+                    this.Visibility = Visibility.Hidden;
                     MenuWindow.ShowDialog();
                     break;
                 default:

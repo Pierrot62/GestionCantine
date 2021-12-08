@@ -16,7 +16,7 @@
                 <RowDefinition Height="0.1*"/>
             </Grid.RowDefinitions>
             <!--Row 0-->
-            <Label x:Name="titreWindow" Grid.Row="0" Content="Liste des Reservations" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="45" Foreground="{DynamicResource TextLabel}"/>
+            <Label x:Name="titreWindow" Grid.Row="0" Content="Liste des Eleves" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="45" Foreground="{DynamicResource TextLabel}"/>
 
             <!--Row 1-->
             <Grid Grid.Row="1">
@@ -30,10 +30,10 @@
 
                 <DataGrid x:Name="dg" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Nom" Binding="{Binding NomEleve}" Width="1*"/>
-                        <DataGridTextColumn Header="Prenom" Binding="{Binding PrenomEleve}" Width="1.5*"/>
-                        <DataGridTextColumn Header="Date de naissance" Binding="{Binding DDNEleve}" Width="1.5*"/>
-                        <DataGridTextColumn Header="Solde" Binding="{Binding SoldeEleve}" Width="1.5*"/>
+                        <DataGridTextColumn Header="Nom" Binding="{Binding NomEleve}" Width="2*"/>
+                        <DataGridTextColumn Header="Prenom" Binding="{Binding PrenomEleve}" Width="2*"/>
+                        <DataGridTextColumn Header="Date de naissance" Binding="{Binding DDNEleve}" Width="2*"/>
+                        <DataGridTextColumn Header="Solde" Binding="{Binding SoldeEleve}" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
@@ -48,7 +48,7 @@
                         <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="1" Content="Ajouter" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15"/>
+                    <Button Grid.Row="1" Content="Ajouter" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15" Click="Action" />
                     <Button Grid.Row="3" Content="Modifier" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15"/>
                     <Button Grid.Row="5" Content="Supprimer" BorderBrush="{DynamicResource BorderBoutton}" Background="{DynamicResource FondBoutton}" FontSize="15"/>
                 </Grid>

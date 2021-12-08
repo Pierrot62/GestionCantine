@@ -37,7 +37,8 @@ namespace GestionCantine.Formulaires
 
         private void Init()
         {
-
+            this.titreForm.Content = _Action;
+            //this.action.Content = _Action;
         }
     }
 }

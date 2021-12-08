@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionCantine.Controllers;
+using GestionCantine.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,33 @@ namespace GestionCantine.Listes
     /// </summary>
     public partial class Menus : Window
     {
-        public Menus()
+        private MainWindow FenetreMere { get; set; }
+        private MenuController _MenuController { get; set; }
+
+        public Menus(MainWindow FenetreMere, GCantineContext _ctx)
         {
             InitializeComponent();
+            this.FenetreMere = FenetreMere;
+            this._MenuController = new MenuController(_ctx);
+            Init();
+        }
+
+        private void Init()
+        {
+            dg.ItemsSource = _MenuController.GetAllMenu();
+        }
+
+
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            if (this.Left != this.FenetreMere.Left || this.Top != this.FenetreMere.Top)
+            {
+                this.FenetreMere.Left = this.Left;
+                this.FenetreMere.Top = this.Top;
+            }
+            this.FenetreMere.Visibility = Visibility.Visible;
+            this.Close();
         }
     }
 }
