@@ -26,8 +26,8 @@ namespace GestionCantine.Data.Dtos
     public class ReservationDTOIn
     {
         public DateTime DateReservation { get; set; }
-        public int idEleve { get; set; }
-        public int idMenu { get; set; }
+        public int IdEleve { get; set; }
+        public int IdMenu { get; set; }
     }
 
 }
