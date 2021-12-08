@@ -2,6 +2,7 @@
 using GestionCantine.Data;
 using GestionCantine.Data.Dtos;
 using GestionCantine.Listes;
+using GestionCantine.MessageDErreur;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,14 +62,22 @@ namespace GestionCantine.Formulaires
 
         private void Valider(object sender, RoutedEventArgs e)
         {
-            PaiementDTOIn paiement = new PaiementDTOIn {
-                MontantPaiement = double.Parse(FpMontant.Text),
-                DatePaiement=FpDate.SelectedDate,
-                IdEleve = (int)FpEleve.SelectedValue,
-                IdModeDePaiement = (int)FpModeDePaiement.SelectedValue
-            };
-            this.FenetreMere.ActionPaiement(paiement, this.Action, this.Id);
-            this.Fermer();
+            if (ControlSaisieCorrect())
+            {
+                PaiementDTOIn paiement = new PaiementDTOIn
+                {
+                    MontantPaiement = double.Parse(FpMontant.Text),
+                    DatePaiement = FpDate.SelectedDate,
+                    IdEleve = (int)FpEleve.SelectedValue,
+                    IdModeDePaiement = (int)FpModeDePaiement.SelectedValue
+                };
+                this.FenetreMere.ActionPaiement(paiement, this.Action, this.Id);
+                this.Fermer();
+            }
+            else
+            {
+                new SaisieFormIncorrect().ShowDialog();
+            }  
         }
         private void Retour(object sender, RoutedEventArgs e)
         {
@@ -78,6 +87,11 @@ namespace GestionCantine.Formulaires
         private void Fermer()
         {
             this.Close();
+        }
+        private bool ControlSaisieCorrect()
+        {
+            FpMontant.Text=FpMontant.Text.Replace('.', ',');
+            return double.TryParse(FpMontant.Text, out double sortie) && FpDate.SelectedDate != null && FpEleve.SelectedValue != null && FpModeDePaiement.SelectedValue != null;
         }
     }
 }
