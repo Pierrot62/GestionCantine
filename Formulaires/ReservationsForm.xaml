@@ -64,7 +64,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid x:Name="dgMenu" Grid.Column="3"  Grid.Row="2" CanUserAddRows="False" AutoGenerateColumns="False">
+                    <DataGrid x:Name="dgMenu" Grid.Column="3"  Grid.Row="2" CanUserAddRows="False" AutoGenerateColumns="False" CellStyle="{DynamicResource SelectedBackground}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Date du menu" Binding="{Binding DateMenu}" Width="1*"/>
                             <DataGridTextColumn Header="Menu" Binding="{Binding LibelleMenu}" Width="1*"/>
