@@ -30,13 +30,10 @@
 
                 <DataGrid x:Name="dg" Grid.Column="1" CanUserAddRows="False" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Date" Binding="{Binding DateReservation}" Width="1*"/>
-                        <DataGridTextColumn Header="Nom de l'élève" Binding="{Binding NomEleve}" Width="1.5*"/>
-                        <DataGridTextColumn Header="Prenom de l'élève" Binding="{Binding PrenomEleve}" Width="1.5*"/>
+                        <DataGridTextColumn Header="Nom" Binding="{Binding NomEleve}" Width="1*"/>
+                        <DataGridTextColumn Header="Prenom" Binding="{Binding PrenomEleve}" Width="1.5*"/>
                         <DataGridTextColumn Header="Date de naissance" Binding="{Binding DDNEleve}" Width="1.5*"/>
-                        <DataGridTextColumn Header="Date du menu" Binding="{Binding DateMenu}" Width="1*"/>
-                        <DataGridTextColumn Header="Menu" Binding="{Binding LibelleMenu}" Width="3*"/>
-                        <DataGridTextColumn Header="Prix" Binding="{Binding PrixMenu}" Width="0.5*"/>
+                        <DataGridTextColumn Header="Solde" Binding="{Binding SoldeEleve}" Width="1.5*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
