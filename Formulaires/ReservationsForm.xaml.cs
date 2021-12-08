@@ -33,12 +33,13 @@ namespace GestionCantine.Formulaires
             this._FenetreMere = FenetreMere;
             this._SelectedObj = selectedObj;
             this._Ctx = context;
+            Init();
         }
 
         private void Init()
         {
-            this.titreForm.Content = _Action;
-            //this.action.Content = _Action;
+            this.titreForm.Content = _Action + " une réservation";
+            this.action.Content = _Action;
         }
     }
 }
