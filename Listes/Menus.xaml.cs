@@ -2,6 +2,7 @@
 using GestionCantine.Data;
 using GestionCantine.Data.Dtos;
 using GestionCantine.Formulaires;
+using GestionCantine.MessageDErreur;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,7 @@ namespace GestionCantine.Listes
            
             if (menu == null && (nom == "Modifier" || nom == "Supprimer"))
             {
-                MessageBox.Show("Pas de sélection");
+                new PasDeSelection().ShowDialog();
             }
             else
             {
@@ -76,7 +77,7 @@ namespace GestionCantine.Listes
 
             if (menu == null && (action == "Modifier" || action == "Supprimer"))
             {
-                MessageBox.Show("Pas de sélection");
+                new PasDeSelection().ShowDialog();
             }
             else if (action == "Supprimer")
             {
