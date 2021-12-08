@@ -53,7 +53,7 @@ namespace GestionCantine.Data.Services
             _context.SaveChanges();
         }
 
-        public void Operation(int IdEleve, float montant)
+        public void Operation(int IdEleve, double montant)
         {
             Eleve EleveAModif = this.GetEleveById(IdEleve);
             EleveAModif.SoldeEleve += montant;
