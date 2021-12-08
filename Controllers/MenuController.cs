@@ -34,10 +34,10 @@ namespace GestionCantine.Controllers
         }
 
         //GET api/Menu
-        public ActionResult<IEnumerable<MenuDTOOut>> GetAllMenu()
+        public IEnumerable<MenuDTOOut> GetAllMenu()
         {
             IEnumerable<Menu> listeMenu = _service.GetAllMenu();
-            return Ok(_mapper.Map<IEnumerable<MenuDTOOut>>(listeMenu));
+            return _mapper.Map<IEnumerable<MenuDTOOut>>(listeMenu);
         }
 
         //GET api/Menu/{i}

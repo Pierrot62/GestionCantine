@@ -1,5 +1,6 @@
 ﻿using GestionCantine.Controllers;
 using GestionCantine.Data;
+using GestionCantine.Formulaires;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,6 @@ namespace GestionCantine.Listes
         }
 
 
-
         private void Back(object sender, RoutedEventArgs e)
         {
             if (this.Left != this.FenetreMere.Left || this.Top != this.FenetreMere.Top)
@@ -48,6 +48,38 @@ namespace GestionCantine.Listes
             }
             this.FenetreMere.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void Action(object sender, RoutedEventArgs e)
+        {
+            string mode = (string)((Button)sender).Content;
+            double left = this.Left;
+            double top = this.Top;
+            switch (mode)
+            {
+                case "Ajouter":
+                    EleveForm formEleveAdd = new();
+                    formEleveAdd.Left = left;
+                    formEleveAdd.Top = top;
+                    this.Visibility = Visibility.Hidden;
+                    formEleveAdd.Show();
+                    break;
+                case "Modifier":
+                    EleveForm formEleveUp = new();
+                    formEleveUp.Left = left;
+                    formEleveUp.Top = top;
+                    this.Visibility = Visibility.Hidden;
+                    formEleveUp.Show();
+                    break;
+                case "Supprimer":
+                    Suppression windowSupp = new();
+                    windowSupp.Left = left;
+                    windowSupp.Top = top;
+                    windowSupp.Show();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
