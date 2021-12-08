@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Formulaires\Eleves.xaml.cs">
+    <Compile Update="Formulaires\EleveForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Formulaires\MenusForm.xaml.cs">
@@ -27,7 +27,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Formulaires\Eleves.xaml">
+    <Page Update="Formulaires\EleveForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Formulaires\MenusForm.xaml">
