@@ -87,10 +87,10 @@ namespace GestionCantine.Listes
                         break;
                 }
 
-                ActualiserTableau();
+                ActualiseDgMenus();
             }
         
-        private void ActualiserTableau()
+        private void ActualiseDgMenus()
         {
             dgMenus.ItemsSource = _MenuController.GetAllMenu();
         }
