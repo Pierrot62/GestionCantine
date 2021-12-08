@@ -2,6 +2,7 @@
 using GestionCantine.Data;
 using GestionCantine.Data.Dtos;
 using GestionCantine.Listes;
+using GestionCantine.MessageDErreur;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,7 +76,7 @@ namespace GestionCantine.Formulaires
             }
             else
             {
-                MessageBox.Show("Saisie incorrecte");
+                new SaisieFormIncorrect().ShowDialog();
             }  
         }
         private void Retour(object sender, RoutedEventArgs e)

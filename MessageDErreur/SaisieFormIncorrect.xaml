@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionCantine.MessageDErreur"
         mc:Ignorable="d"
-        Title="SaisieFormIncorrect" Height="450" Width="800">
-    <Grid>
-        
+        Title="Erreur !" Height="210" Width="297">
+    <Grid Background="{DynamicResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="1" FontWeight="Bold" Text="Saisie incorrecte !" TextWrapping="Wrap" Foreground="{DynamicResource TextLabel}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="BtnOk" Content="Ok" Grid.Row="3" Grid.Column="1" Background="{DynamicResource FondBoutton}" BorderBrush="{DynamicResource BorderBoutton}" Click="Ok"/>
     </Grid>
 </Window>

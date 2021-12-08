@@ -23,5 +23,9 @@ namespace GestionCantine.MessageDErreur
         {
             InitializeComponent();
         }
+        private void Ok(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
