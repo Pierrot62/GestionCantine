@@ -16,8 +16,8 @@ namespace GestionCantine.Data.Profiles
             CreateMap<MenuDTOIn, Menu>();
             CreateMap<Menu, MenuDTOIn>();
 
-            CreateMap<MenuDTOOut, Menu>();
-            CreateMap<Menu, MenuDTOOut>();
+            CreateMap<Menu, MenuDTOOut>()
+                .ForMember(d => d.DateMenu, o => o.MapFrom(s => ((DateTime)s.DateMenu).ToString("dd-MM-yyyy")));
         }
     }
 }
