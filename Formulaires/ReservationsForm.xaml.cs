@@ -55,6 +55,18 @@ namespace GestionCantine.Formulaires
             _MenuController = new MenuController(_Ctx);
             this.dgEleve.ItemsSource = _EleveController.GetAllEleve();
             this.dgMenu.ItemsSource = _MenuController.GetAllMenu();
+            dgEleve.DisplayMemberPath = "NomEleve";
+            dgEleve.SelectedValuePath = "IdEleve";
+            dgMenu.DisplayMemberPath = "LibelleMenu";
+            dgMenu.SelectedValuePath = "IdMenu";
+
+            if (this._Action == "Modifier")
+            {
+                dgEleve.SelectedValue = _SelectedObj.IdEleve;
+                dgMenu.SelectedValue = _SelectedObj.IdMenu;
+                dateReservationPicker.SelectedDate = DateTime.Parse(_SelectedObj.DateReservation);
+            }
+
         }
 
 
@@ -69,30 +81,41 @@ namespace GestionCantine.Formulaires
             this.Close();
         }
 
+        private void Back()
+        {
+            if (this.Left != this._FenetreMere.Left || this.Top != this._FenetreMere.Top)
+            {
+                this._FenetreMere.Left = this.Left;
+                this._FenetreMere.Top = this.Top;
+            }
+            this._FenetreMere.Visibility = Visibility.Visible;
+            this.Close();
+        }
+
         private void btnActionClick(object sender, RoutedEventArgs e)
         {
-
+            ReservationDTOIn obj = new ReservationDTOIn();
             switch (_Action)
             {
                 case "Ajouter":
                     if (((EleveDTOOut)dgEleve.SelectedItem) != null && ((MenuDTOOut)dgMenu.SelectedItem) != null)
                     { 
-                    ReservationDTOIn obj = new ReservationDTOIn();
                     obj.DateReservation = (DateTime) dateReservationPicker.SelectedDate;
                     obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
                     obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
                     _ReservationController.CreateReservation(obj);
-                    if (this.Left != this._FenetreMere.Left || this.Top != this._FenetreMere.Top)
-                    {
-                        this._FenetreMere.Left = this.Left;
-                        this._FenetreMere.Top = this.Top;
-                    }
-                    this._FenetreMere.Visibility = Visibility.Visible;
-                    this.Close();
+                    this.Back();
                     } else
                     {
                         MessageBox.Show("Pas de sélection");
                     }
+                    break;
+                case "Modifier":
+                    obj.DateReservation = (DateTime)dateReservationPicker.SelectedDate;
+                    obj.IdEleve = ((EleveDTOOut)dgEleve.SelectedItem).IdEleve;
+                    obj.IdMenu = ((MenuDTOOut)dgMenu.SelectedItem).IdMenu;
+                    _ReservationController.UpdateReservation(_SelectedObj.IdReservation, obj);
+                    this.Back();
                     break;
                 default:
                     break;
