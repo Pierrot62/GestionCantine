@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GestionCantine.Data.Models;
+using GestionCantine.MessageDErreur;
 
 namespace GestionCantine.Listes
 {
@@ -33,14 +34,14 @@ namespace GestionCantine.Listes
         {
             InitializeComponent();
             this._FenetreMere = _FenetreMere;
-            this._ReservationController = new ReservationController(_ctx);
-            this._EleveController = new EleveController(_ctx);
             this._Ctx = _ctx;
             Init();
         }
 
         public void Init()
         {
+            this._ReservationController = new ReservationController(_Ctx);
+            this._EleveController = new EleveController(_Ctx);
             dg.ItemsSource = _ReservationController.GetAllReservation();
         }
 
@@ -65,7 +66,8 @@ namespace GestionCantine.Listes
 
             if (reservation == null && (action == "Modifier" || action == "Supprimer"))
             {
-                MessageBox.Show("Pas de sélection");
+                PasDeSelection formulaire = new PasDeSelection();
+                formulaire.ShowDialog();
             }
             else if (action == "Supprimer")
             {
