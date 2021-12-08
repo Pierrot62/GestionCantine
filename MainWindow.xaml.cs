@@ -44,9 +44,10 @@ namespace GestionCantine
                     ReservationWindow.ShowDialog();
                     break;
                 case "Eleves":
-                    Eleves EleveWindow = new();
+                    Eleves EleveWindow = new(this, _context);
                     EleveWindow.Left = left;
                     EleveWindow.Top = top;
+                    this.Visibility = Visibility.Hidden;
                     EleveWindow.ShowDialog();
                     break;
                 case "Paiements":
